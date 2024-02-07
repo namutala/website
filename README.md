@@ -46,6 +46,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [TWESIGE TREJAN](link to profile)
 - [ISHAMI KWISANGA ANDRIC](link to profile)
-- [KYOPMUHENDOO SUMAYAH](link to profile)
+- [KYOMUHENDOO SUMAYAH](link to profile)
 - [SERUBE BERIS MARTIN](link to profile)
 - [ASIIMWE EMMANUEL](link to profile)
