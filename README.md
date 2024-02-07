@@ -44,8 +44,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Authors
 
-- [Member 1](link to profile)
-- [Member 2](link to profile)
-- [Member 3](link to profile)
-- [Member 4](link to profile)
-- [Member 5](link to profile)
+- [TWESIGE TREJAN](link to profile)
+- [ISHAMI KWISANGA ANDRIC](link to profile)
+- [KYOPMUHENDOO SUMAYAH](link to profile)
+- [SERUBE BERIS MARTIN](link to profile)
+- [ASIIMWE EMMANUEL](link to profile)
