@@ -30,7 +30,7 @@ LocalBizConnect aims to provide a digital platform for local businesses to showc
 ## Technologies Used
 
 - **Backend Framework**: Django
-- **Database**: PostgreSQL
+- **Database**: MySQL
 - **Email API**: SendGrid
 - **Cloud Hosting**: Heroku
 
