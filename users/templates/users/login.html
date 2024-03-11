@@ -3,6 +3,12 @@
     <title></title>
   </head>
   <body>
-    <p>we r going to work on this</p>
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <button class="btn" type="submit">Login</button>
+    </form>
+    <p class="text-muted">
+      Need an account! <a href="{% url 'register' %}"> Sign up now</a>
+    </p>
   </body>
 </html>
