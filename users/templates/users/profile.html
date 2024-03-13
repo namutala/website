@@ -4,8 +4,9 @@
     <title>USER PROFILE</title>
     <style>
       .account-img {
-        max-width: 200px; /* Set the maximum width */
-        max-height: 200px; /* Set the maximum height */
+        max-width: 75px; /* Set the maximum width */
+        max-height: 150px; /* Set the maximum height */
+        border-radius: 35%; /* Make the image round */
       }
     </style>
   </head>
@@ -13,13 +14,12 @@
     {% block content %}
     <div class="content-section">
       <div class="media">
-        <img
-          class="rounded-circle account-img"
-          src="{{ user.profile.image.url }}"
-        />
+        <img class="account-img" src="{{ user.profile.image.url }}" />
         <div class="media-body">
           <h2 class="account-heading">{{ user.username}}</h2>
-          <p class="text-secondary">{{ user.username }}</p>
+          <p class="text-secondary">{{ user.email }}</p>
+          <p class="text-secondary">{{ user.profile.bio }}</p>
+          <!-- Display user's bio -->
         </div>
       </div>
       <!-- FORM HERE -->
