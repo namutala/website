@@ -5,6 +5,8 @@ from django.contrib import messages
 from .forms import UserRegisterForm 
 def home(request):
     return HttpResponse('<h1>Hello there</h1>')
+def profile(request):
+    return render(request, 'users/profile.html', None)
 
 def register(request):
     if request.method =='POST':
