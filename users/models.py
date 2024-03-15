@@ -1,33 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>User Profile</title>
-    <style>
-      .account-img {
-        max-width: 75px;
-        max-height: 150px;
-        border-radius: 35%;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="content-section">
-      <div class="media">
-        <img class="account-img" src="{{ request.user.profile.image.url }}" />
-        <div class="media-body">
-          <h2 class="account-heading">{{ request.user.username }}</h2>
-          <p class="text-secondary">{{ request.user.email }}</p>
-          <p class="text-secondary">{{ request.user.profile.bio }}</p>
-        </div>
-      </div>
-      <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <fieldset class="form-group">
-          <legend class="border-bottom mb-4">Update User Profile</legend>
-          {{ u_form.as_p }} {{ p_form.as_p }}
-        </fieldset>
-        <button class="btn" type="submit">Update</button>
-      </form>
-    </div>
-  </body>
-</html>
+from django.db import models
+from django.contrib.auth.models import User
+from PIL import Image
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete = models.CASCADE)
+    image = models.ImageField(default='default.jpg', upload_to = 'profille_pics')
+    Bio= models.TextField(default = 'Hello I use localbiconnect')
+    
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+    
+    def save(self):
+        super().save()
+        
+        img = Image.open(self.image.path)
+        
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
+            
+        
