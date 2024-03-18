@@ -94,7 +94,7 @@ body{
 .login .form-group i{
     position: absolute;
     left: 5%;
-    top: 25%;
+    top: 30%;
     color: #FAA916;
 }
 
@@ -117,6 +117,10 @@ body{
     font-size: 1.3em;
     font-weight: bold;
 
+}
+
+.errorlist li{
+    list-style: none;
 }
 
 /* .login .form-group {

@@ -23,26 +23,26 @@
           {% csrf_token %} 
           
           <div class="form-group form-floating">
-            <i class="fa-solid fa-user-tie"></i>
+            <!-- <i class="fa-solid fa-user-tie"></i> -->
             <!-- <label for="{{ form.username.id_for_label }}" class="form-label">Username</label> -->
-            {{ form.username }}
+            {{ form }}
           </div>
         
-          <div class="form-group form-floating">
+          <!-- <div class="form-group form-floating">
             <i class="fa-solid fa-envelope"></i>
-            <!-- <label for="{{ form.password.id_for_label }}" class="form-label">Password</label> -->
+            <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
             {{ form.email }}
           </div>
           <div class="form-group form-floating">
             <i class="fa-solid fa-key"></i>
-            <!-- <label for="{{ form.password.id_for_label }}" class="form-label">Password</label> -->
+            <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
             {{ form.password1 }}
           </div>
           <div class="form-group form-floating">
             <i class="fa-solid fa-key"></i>
-            <!-- <label for="{{ form.password.id_for_label }}" class="form-label">Password</label> -->
+            <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
             {{ form.password2 }}
-          </div>
+          </div> -->
           <button class="action_button"  type="submit">Create Account</button>
         </form>
         
