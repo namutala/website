@@ -4,9 +4,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from django.urls import reverse
 def home(request):
-    return HttpResponse('<h1>Hello there</h1>')
-
+    login_url = reverse('login')
+    return HttpResponse(f'<h1>Hello there</h1><a href="{login_url}">Login</a>')
+def login(request):
+    return render(request, 'users/login.html')
 def register(request):
     if request.method =='POST':
         form = UserRegisterForm(request.POST)
