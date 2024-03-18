@@ -6,8 +6,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 def home(request):
     return HttpResponse('<h1>Hello there</h1>')
-def profile(request):
-    return render(request, 'users/profile.html', None)
 
 def register(request):
     if request.method =='POST':
@@ -23,7 +21,7 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 
-@login_required
+@login_required(login_url='login')
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
