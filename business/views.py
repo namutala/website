@@ -10,3 +10,6 @@ def register_business(request):
         return HttpResponse('Business Registered Successfully')
     else:
         return render(request, 'business/business.html')
+
+def business_profile(request):
+    return HttpResponse('Not yet implemented')

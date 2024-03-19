@@ -32,6 +32,7 @@ urlpatterns = [
     path('password-reset/done/',auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name="password_reset_done"),
     path('password-reset-complete/',auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name="password_reset_complete"),
     path('', include('users.urls')),
+    path('business/', include('business.urls'))
 ]
 
 if settings.DEBUG :
