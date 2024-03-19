@@ -4,7 +4,7 @@ from PIL import Image
 
 class Business(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    Business_name = models.TextField(max_length = 50)
+    Business_name = models.TextField(max_length = 25)
     logo = models.ImageField(default='default.jpg', upload_to = 'business_logos')
     Business_description = models.TextField(max_length= 150)
     location = models.TextField()
