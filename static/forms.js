@@ -6,8 +6,10 @@ formGroupInputs.forEach(input => {
   input.addEventListener('input', () => {
     if (input.value.trim() !== '') {
       label.classList.add('floating');
-    } else {
-      label.classList.remove('floating');
-    }
+    } 
   });
+
+  if (input.value.trim() !== '') {
+    label.classList.add('floating');
+  } 
 });
