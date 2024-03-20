@@ -124,12 +124,12 @@ body{
 }
  /* register section */
  .register .login{
-    height: 95vh;
+    height: 80vh;
     padding-bottom: 20px;
  }
 
 .register .side-content{
-    height: 95vh;
+    height: 80vh;
 }
 .register .helptext{
     display: none;
@@ -182,7 +182,8 @@ body{
 }
 
 input:focus + .form-label, 
-input.floating + .form-label {
+input:not(:empty) + .form-label,
+.form-label.floating {
     transform: translateY(-200%);
     font-size: 0.8rem; /* Adjust font size for smaller label */
     color: #333; /* Adjust color */

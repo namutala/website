@@ -1,10 +1,13 @@
-const input = document.querySelector('.form-group input');
-const label = document.querySelector('.form-group label');
+const formGroupInputs = document.querySelectorAll('.form-group input');
 
-input.addEventListener('input', () => {
-  if (input.value.trim() !== '') {
-    label.classList.add('floating');
-  } else {
-    label.classList.remove('floating');
-  }
+formGroupInputs.forEach(input => {
+  const label = input.nextElementSibling; // Assuming label is the next sibling
+
+  input.addEventListener('input', () => {
+    if (input.value.trim() !== '') {
+      label.classList.add('floating');
+    } else {
+      label.classList.remove('floating');
+    }
+  });
 });
