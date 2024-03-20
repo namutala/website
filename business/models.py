@@ -14,7 +14,7 @@ class Business(models.Model):
     def _str_(self):
         return f'{self.owner.username} Business'
 
-class Catalogoue(models.Model):
+class Catalogue(models.Model):
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='catalogues')
     images = models.ManyToManyField('Image', related_name= 'catalogues')
 

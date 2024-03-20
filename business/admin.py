@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Business, Catalogoue
+from .models import Business, Catalogue
 
 admin.site.register(Business)
-admin.site.register(Catalogoue)
+admin.site.register(Catalogue)
 

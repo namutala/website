@@ -3,10 +3,6 @@
     <title>Catalogue</title>
   </head>
   <body>
-    {% block content %}
-    {% for item in cart %}
-        {{ item }} 
-    {% endfor %}
-    {% endblock content %}
+    {% block content %} {{ CartForm }} {% endblock content %}
   </body>
 </html>
