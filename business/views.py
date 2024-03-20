@@ -27,3 +27,4 @@ def add_catalogue(request):
     else:
         CartForm =CatalogueForm()
     return render(request, 'business/catalogue.html', {'CartForm':CartForm})
+
