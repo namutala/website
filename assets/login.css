@@ -76,7 +76,7 @@ body{
     height: 50px;
     margin-bottom: 30px;
     border-radius: 30px;
-    padding: 3px 40px; 
+    padding: 2px 40px; 
     width: 100%;
     border: none;
     outline: none;
@@ -86,7 +86,7 @@ body{
 }
 
 .login .form-group input:focus{
-    border: 1px solid #D81159;
+    border: 1px solid #FFBC42;
     outline: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
