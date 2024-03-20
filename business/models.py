@@ -11,15 +11,16 @@ class Business(models.Model):
     email = models.EmailField()
     contact = models.IntegerField()
 
-    def _str_(self):
+    def __str__(self):
         return f'{self.owner.username} Business'
 
 class Catalogue(models.Model):
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='catalogues')
     images = models.ManyToManyField('Image', related_name= 'catalogues')
 
-    def _str_(self):
+    def __str__(self):
         return f'Catalogue for {self.business.business_name}'
+    
 class Image(models.Model):
     image = models.ImageField(upload_to='business_catalogue_images')
     def __str__(self):
