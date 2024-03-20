@@ -69,12 +69,12 @@ body{
 }
 .login .form-group{ 
     position: relative;
+    margin-bottom: 30px;
 }
 
 .login .form-group input{
     background-color: #eee;
-    height: 50px;
-    margin-bottom: 30px;
+    height: 50px; 
     border-radius: 30px;
     padding: 2px 40px; 
     width: 100%;
@@ -161,4 +161,30 @@ body{
     color: #C82C2C;
     font-size: 14px;
     line-height: 1.5;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+    pointer-events: none; /* Prevent clicks on label */
+    color: #999; /* Adjust color */
+}
+
+.form-group input {
+    padding-top: 1.5rem; /* Space for the label */
+}
+
+input:focus + .form-label, 
+input.floating + .form-label {
+    transform: translateY(-200%);
+    font-size: 0.8rem; /* Adjust font size for smaller label */
+    color: #333; /* Adjust color */
+    background: #fff; 
 }
