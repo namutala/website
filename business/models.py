@@ -4,13 +4,12 @@ from PIL import Image
 
 class Business(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    business_name = models.CharField(max_length=25, default ='Business name')
+    business_name = models.CharField(max_length=35, default ='Business name')
     logo = models.ImageField(default='default.jpg', upload_to='business_logos')
-    business_description = models.TextField(max_length=150)
-    location = models.TextField()
+    business_description = models.TextField(max_length=200)
+    location = models.TextField(max_length = 50)
     email = models.EmailField()
     contact = models.IntegerField()
-    photos = models.ManyToManyField('BusinessImage', related_name='businesses', blank=True)
 
     def _str_(self):
         return f'{self.owner.username} Business'

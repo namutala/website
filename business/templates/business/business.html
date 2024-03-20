@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>business Registration</title>
+  </head>
+  <body>
+    {% block content %}
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <button class="action_button" type="submit">Register Business</button>
+    </form>
+    {% endblock %}
+  </body>
+</html>
