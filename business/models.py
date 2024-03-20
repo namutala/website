@@ -14,10 +14,14 @@ class Business(models.Model):
     def _str_(self):
         return f'{self.owner.username} Business'
 
-class BusinessImage(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='catalogue_images')
-    image = models.ImageField(upload_to='business_catalogue')
+class Catalogoue(models.Model):
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='catalogues')
+    images = models.ManyToManyField('Image', related_name= 'catalogues')
 
     def _str_(self):
-        return f'Image for {self.business.business_name}'
+        return f'Catalogue for {self.business.business_name}'
+class Image(models.Model):
+    image = models.ImageField(upload_to='business_catalogue_images')
+    def __str__(self):
+        return f'Image {self.id}' 
 
