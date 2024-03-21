@@ -4,11 +4,12 @@ from django.contrib.auth.decorators import login_required
 from .models import Business, Catalogue
 from .forms import BusinessForm, CatalogueForm
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView, ListView
 
 
-class BusinessCreateView(CreateView):
+class BusinessCreateView(LoginRequiredMixin, CreateView):
     model = Business
     template_name = 'business/business_create.html'
     fields = '__all__'
@@ -29,11 +30,11 @@ class BusinessCreateView(CreateView):
         else:
             return self.form_invalid(form)
 
-class BusinessDetailView(DetailView):
+class BusinessDetailView(LoginRequiredMixin, DetailView):
     model = Business
     template_name = 'business/business_detail.html'
 
-class BusinessListView(ListView):
+class BusinessListView(LoginRequiredMixin, ListView):
     model = Business
     template_name = 'business/businesses_list.html'
     context_object_name = 'businesses'
