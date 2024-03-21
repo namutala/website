@@ -20,7 +20,7 @@ class Business(models.Model):
 
 class Catalogue(models.Model):
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='catalogues', default=None)
-    images = models.ImageField(upload_to='media/business_catalogue', default=None)
+    images = models.ImageField(upload_to='business_catalogue', default=None)
 
     def __str__(self):
         return f'Catalogue for {self.business.business_name}'
