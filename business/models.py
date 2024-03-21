@@ -28,5 +28,6 @@ class Catalogue(models.Model):
 class Image(models.Model):
     image = models.ImageField(upload_to='business_catalogue_images')
     def __str__(self):
-        return f'Image {self.id}' 
+        return f'Image {self.id}'
+
 
