@@ -19,10 +19,8 @@ class BusinessCreateView(CreateView):
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         if form.is_valid():
-            # Save the Business instance
             self.object = form.save()
 
-            # Handle photo uploads
             photos = request.FILES.getlist('photos')
             for photo in photos:
                 Catalogue.objects.create(business=self.object, images=photo)
