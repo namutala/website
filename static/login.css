@@ -69,12 +69,12 @@ body{
 }
 .login .form-group{ 
     position: relative;
+    margin-bottom: 30px;
 }
 
 .login .form-group input{
     background-color: #eee;
-    height: 50px;
-    margin-bottom: 30px;
+    height: 50px; 
     border-radius: 30px;
     padding: 2px 40px; 
     width: 100%;
@@ -86,7 +86,7 @@ body{
 }
 
 .login .form-group input:focus{
-    border: 1px solid #FAA916;
+    border: 1px solid #FFBC42;
     outline: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -95,7 +95,7 @@ body{
     position: absolute;
     left: 5%;
     top: 30%;
-    color: #FAA916;
+    color: #073B4C;
 }
 
 .login .action_button{
@@ -122,12 +122,76 @@ body{
 .errorlist li{
     list-style: none;
 }
+ /* register section */
+ .register .login{
+    height: 95vh;  
+    padding: 0 auto;
+    padding-bottom: 20px;
+ }
 
-/* .login .form-group {
-    height: 100%;
-    width: 90%; 
-    display: inline-block;
-    border: none;
-    background: transparent;
+.register .side-content{
+    height: 95vh;
 }
-  */
+.register .helptext{
+    display: none;
+ }
+
+ .register .form-floating{
+    margin-top: -10px;
+ }
+
+ .register .login label{
+    color: #838383;
+ }
+
+ .register .login label::after{
+    content: '*';
+    color: #db1919;
+ }
+
+ .errorlist{
+    background-color: #F8DDDD;
+    border: 1px solid #F5C6CB;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-bottom: 15px; 
+
+}
+
+.errorlist li{
+    color: #C82C2C;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+    pointer-events: none; /* Prevent clicks on label */
+    color: #999; /* Adjust color */
+}
+
+.form-group input {
+    padding-top: 1.5rem; /* Space for the label */
+}
+
+input:focus + .form-label, 
+input:not(:empty) + .form-label,
+.form-label.floating {
+    transform: translateY(-200%);
+    font-size: 0.8rem; /* Adjust font size for smaller label */
+    color: #333; /* Adjust color */
+    background: #fff; 
+}
+
+
+.register .login h3{
+    margin: -10px auto 30px auto;
+}

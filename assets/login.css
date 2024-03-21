@@ -122,12 +122,7 @@ body{
 .errorlist li{
     list-style: none;
 }
-
-/* .login .form-group {
-    height: 100%;
-    width: 90%; 
-    display: inline-block;
-    border: none;
-    background: transparent;
-}
-  */
+ /* register section */
+.register .helptext{
+    display: none;
+ }
