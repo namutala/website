@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from PIL import Image
 
 class Business(models.Model):
@@ -14,9 +15,12 @@ class Business(models.Model):
     def __str__(self):
         return f'{self.owner.username} Business'
 
+    def get_absolute_url(self):
+        return reverse('catalogue', args=str(self.pk))
+
 class Catalogue(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='catalogues')
-    images = models.ManyToManyField('Image', related_name= 'catalogues')
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='catalogues', default=None)
+    images = models.ImageField(upload_to='media/business_catalogue', default=None)
 
     def __str__(self):
         return f'Catalogue for {self.business.business_name}'

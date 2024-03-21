@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Businesses</title>
+</head>
+<body>
+    <h1>My Businesses</h1>
+{% block content %}
+    {%  for business in businesses %}
+    <li><a href="{% url 'catalogue' pk=business.pk %}">{{ business.business_name }}</a></li>
+    {% endfor %}
+    <p><a href="{% url 'register_biz'%}">Create a new business</a></p>
+{% endblock content %}
+</body>
+</html>
