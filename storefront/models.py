@@ -10,7 +10,7 @@ class Customer(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name.username} details' 
     
 class Product(models.Model):
     CATEGORY = (
@@ -22,6 +22,10 @@ class Product(models.Model):
     category = models.CharField(max_length=200, null=True, blank=True, choices=CATEGORY)
     description = models.TextField(null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
+    
+    def __str__(self):
+        return f'{self.name}'
+    
 class Order(models.Model):
     STATUS = (
         ('Pending', 'Pending'),
@@ -32,4 +36,7 @@ class Order(models.Model):
     product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     status = models.CharField(max_length=200,null=True,blank=True)
+    
+    def __str__(self):
+        return f'{self.customer} order' 
 

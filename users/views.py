@@ -8,8 +8,10 @@ from django.urls import reverse
 def home(request):
     login_url = reverse('login')
     return HttpResponse(f'<h1>Hello there</h1><a href="{login_url}">Login</a>')
+
 def login(request):
     return render(request, 'users/login.html')
+
 def register(request):
     if request.method =='POST':
         form = UserRegisterForm(request.POST)
@@ -18,7 +20,6 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account has been created for {username}!')
             return redirect('login')
-            
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
