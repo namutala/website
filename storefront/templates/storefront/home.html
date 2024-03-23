@@ -6,10 +6,11 @@
 <body>
     {% block content %}
     {% for item in product %}
-    {{item.title}}
-    {{ item.category}}
-    {{item.label}}
-    {{item.price}}
+    {{item.title }}
+    <img src ="{{ item.picture.url }}" alt ="{{item.title}}">
+    {{ item.category }}
+    {{ item.label }}
+    {{ item.price }}
 
     {% endfor %}
     {% endblock content %}

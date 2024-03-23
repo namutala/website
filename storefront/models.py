@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth import get_user
+from PIL import Image
 
 
 class Customer(models.Model):
@@ -28,6 +29,7 @@ class Product(models.Model):
     category = models.CharField(max_length=200, null=True, blank=True, choices=CATEGORY)
     description = models.TextField(null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
+    
     
     def __str__(self):
         return f'{self.name}'
@@ -73,6 +75,7 @@ LABEL_CHOICES = (
 )
 class Item(models.Model):
     title = models.CharField(max_length =100)
+    picture = models.ImageField(default='default.jpg', upload_to = 'item_pics')
     price  = models.FloatField()
     category = models.CharField(choices =CATEGORY_CHOICES, max_length =30, default =None)
     label = models.CharField(choices = LABEL_CHOICES, max_length = 2, default =None)
