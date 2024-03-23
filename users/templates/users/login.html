@@ -18,17 +18,16 @@
     </div>
     <div class="login"> 
         <form method="POST"  >
-          <h3>Sign Up</h3>
-          {% csrf_token %} 
-          {{ form.errors }} 
+          <h3>Sign In</h3>
+          {% csrf_token %}  
           <div class="form-group form-floating">
             <!-- <i class="fa-solid fa-user-tie"></i> -->
-            {{ form }}
+            {{ form.as_p }}
             <!-- <label for="{{ form.username.id_for_label }}" class="form-label">Username</label> -->
            </div>
            
           
-          <button class="action_button"  type="submit">Create Account</button>
+          <button class="action_button"  type="submit">Log In</button>
         </form>
         
     </div>
