@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>User Profile</title>
-    <style>
-      .account-img {
-        max-width: 75px;
-        max-height: 150px;
-        border-radius: 35%;
-      }
-    </style>
-  </head>
-  <body>
+ {% extends 'base.html' %}
+
+ {% block content%}
     <div class="content-section">
       <div class="media">
         <img class="account-img" src="{{ request.user.profile.image.url }}" />
@@ -29,5 +19,4 @@
         <button class="btn" type="submit">Update</button>
       </form>
     </div>
-  </body>
-</html>
+    {% endblock%}
