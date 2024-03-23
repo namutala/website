@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    {% block content %}
+    {% for item in product %}
+    {{item.title}}
+    {{ item.category}}
+    {{item.label}}
+    {{item.price}}
+
+    {% endfor %}
+    {% endblock content %}
+</body>
+</html>
+
+
