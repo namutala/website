@@ -19,17 +19,6 @@ class Customer(models.Model):
     def __str__(self):
         return f'{self.name.username} details' 
     
-class Product(models.Model):
-    CATEGORY = (
-        ('Indoor', 'Indoor'),
-        ('Outdoor', 'Outdoor'),
-        )
-    name = models.CharField(max_length=200, null=True, blank=True)
-    price = models.FloatField(null=True, blank=True)
-    category = models.CharField(max_length=200, null=True, blank=True, choices=CATEGORY)
-    description = models.TextField(null=True, blank=True)
-    date_created = models.DateTimeField(auto_now_add=True, null=True)
-    
     
     def __str__(self):
         return f'{self.name}'
@@ -70,7 +59,7 @@ CATEGORY_CHOICES = (
     )
 LABEL_CHOICES = (
     ('p','primary'),
-    ('s', 'secondary'),
+    ('t', 'secondary'),
     ('t','tertiary')
 )
 class Item(models.Model):
@@ -78,10 +67,19 @@ class Item(models.Model):
     picture = models.ImageField(default='default.jpg', upload_to = 'item_pics')
     price  = models.FloatField()
     category = models.CharField(choices =CATEGORY_CHOICES, max_length =30, default =None)
-    label = models.CharField(choices = LABEL_CHOICES, max_length = 2, default =None)
+    label = models.CharField(choices = LABEL_CHOICES, max_length = 1, default =None)
     
     def __str__(self):
         return self.title
+    
+class Item_details(models.Model):
+    item = models.OneToOneField(Item, on_delete = models.CASCADE, related_name ='details')
+    description = models.TextField(max_length =500)
+    key_features = models.TextField(max_length= 200) 
+
+    def __str__(self):
+        return f'{self.item.title} description'
+       
     
 class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete =models.CASCADE)
