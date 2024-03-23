@@ -46,9 +46,36 @@ class Product(models.Model):
     def __str__(self):
         return f'{self.customer} order' 
 # refresh
+CATEGORY_CHOICES = (
+    ('food and beverages','food and beverages'),
+    ('phones','phones'),
+    ('outdoor','outdoor'),
+    ('indoor','indoor'),
+    ('watches and jewelry','watches and jewelry'),
+    ('books and stationery','books and stationery'),
+    ('toys','toys'),
+    ('games','games'),
+    ('shoes','shoes'),
+    ('bags', "bags"),
+    ('electronics','electronics'),
+    ('health and beauty', 'health and beauty'),
+    ('sports','sports'),
+    ('furniture','furniture'),
+    ('music','music'),
+    ('baby','baby'),
+    ('fitness and gym','fitness and gym'),
+    ('kitchen and dining','kitchen and dining')
+    )
+LABEL_CHOICES = (
+    ('p','primary'),
+    ('s', 'secondary'),
+    ('t','tertiary')
+)
 class Item(models.Model):
     title = models.CharField(max_length =100)
     price  = models.FloatField()
+    category = models.CharField(choices =CATEGORY_CHOICES, max_length =30, default =None)
+    label = models.CharField(choices = LABEL_CHOICES, max_length = 2, default =None)
     
     def __str__(self):
         return self.title
