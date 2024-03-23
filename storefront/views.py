@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Customer, Product, Order
+from .models import Customer, Product, Order, Item, OrderItem
 
 def Product_details(request):
     context ={
@@ -13,4 +13,9 @@ def Order_details(request):
     }
     return render(request, 'storefront/Order_details.html', context)
 
+def Item_list(request):
+    context = {
+        'Item' :Item.objects.all()
+    }
+    return render(request, 'storefront/Item_list.html', context)
 
