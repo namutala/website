@@ -41,3 +41,9 @@ class ProfileTests(TestCase):
         self.assertEqual(query_from_db.image, 'test.png')
         self.assertEqual(query_from_db.Bio, 'This is a test bio.')
 
+    def test_homepage_view(self):
+        response = self.client.get(reverse('site-home'))
+        self.assertEqual(response.status_code, 200)
+    def test_userlogin_page_view(self):
+        response = self.client.get(reverse('login'))
+        self.assertEqual(response.status_code, 200)
