@@ -10,10 +10,9 @@
     <a href="{% url 'item-details' %}">
         <img src="{{ item.picture.url }}" alt="{{ item.title }}">
     </a>
-    
-    {{ item.category }}
-    {{ item.label }}
-    {{ item.price }}
+    <p>{{ item.category }} </p>
+    <p>{{ item.label }}</p>
+    <p>Shs.{{ item.price }}</p>
 
     {% endfor %}
     {% endblock content %}

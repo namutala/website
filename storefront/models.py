@@ -58,16 +58,16 @@ CATEGORY_CHOICES = (
     ('kitchen and dining','kitchen and dining')
     )
 LABEL_CHOICES = (
-    ('p','primary'),
-    ('t', 'secondary'),
-    ('t','tertiary')
+    ('new','new'),
+    ('flash sale', 'flash sale'),
+    ('limited','limited')
 )
 class Item(models.Model):
     title = models.CharField(max_length =100)
     picture = models.ImageField(default='default.jpg', upload_to = 'item_pics')
     price  = models.FloatField()
     category = models.CharField(choices =CATEGORY_CHOICES, max_length =30, default =None)
-    label = models.CharField(choices = LABEL_CHOICES, max_length = 1, default =None)
+    label = models.CharField(choices = LABEL_CHOICES, max_length = 15, default =None)
     
     def __str__(self):
         return self.title
