@@ -13,7 +13,7 @@
     <p>{{ item.category }} </p>
     <p>{{ item.label }}</p>
     <p>Shs.{{ item.price }}</p>
-    <a href="{% url 'add_to_cart' item.id %}">Add to Cart</a>
+    <a href="{% url 'add-to-cart' item.id %}">Add to Cart</a>
     {% endfor %}
     {% endblock content %}
 </body>

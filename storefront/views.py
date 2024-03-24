@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Customer, Order, Item, OrderItem, Item_details
+from django.template.loader import get_template
+from django.urls import reverse
 
 def home(request):
     context ={
@@ -19,7 +21,7 @@ def add_to_cart(request, item_id):
     cart = request.session.get('cart', {})
     cart[item_id] = cart.get(item_id, 0) + 1
     request.session['cart'] = cart
-    return redirect('cart_view')
+    return redirect('cart-view')
 
 def cart_view(request):
     cart = request.session.get('cart', {})
@@ -27,12 +29,7 @@ def cart_view(request):
     items = Item.objects.filter(id__in=item_ids)
     cart_items = [(item, cart[str(item.id)]) for item in items]
     total_price = sum(item.price * quantity for item, quantity in cart_items)
-    return render(request, 'cart.html', {'cart_items': cart_items, 'total_price': total_price})
-
-
-
-
-
+    return render(request, 'storefront/cart.html', {'cart_items': cart_items, 'total_price': total_price})
 
 
 def Order_details(request):

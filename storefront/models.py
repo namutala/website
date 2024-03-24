@@ -79,9 +79,7 @@ class Item_details(models.Model):
 
     def __str__(self):
         return f'{self.item.title} description'
-       
-class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete= models.CASCADE)   
+         
     
 class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete =models.CASCADE)
