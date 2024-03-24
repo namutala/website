@@ -45,9 +45,29 @@ i{
     border-left: 2px solid #FAA916;
     box-shadow: 2px 3px 6px #b4b1b1;
 }
-.use-details{
+.user-details{
     display: flex;
     align-items: center;
     justify-content: end;
     flex-grow: 1;
 }
+.user-details i{
+    color: #FAA916;
+    margin-right: 10px;
+}
+.user-details img{
+    height: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.logo{
+    flex-grow: 1;
+}
+.logo i{
+    margin-right: 10px;
+    transition: .3s ease;
+}
+.logo i:hover{
+    color: #FAA916;
+}
+/*sidebar stylings*/
