@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Shopping Cart</title>
+</head>
+<body>
+<ul>
+    {% for item, quantity in cart_items %}
+        <l1>
+            <img src = "{{ item.picture.url}}" alt ="{{item.title}}">
+            <h3> {{ item.title }} </h3>
+            <p>Price : ${{ item.price }} </p>
+            <p>Quantity : {{ Quantity }} </p>
+        </li>
+    {% endfor %}
+</ul>
+<p> Total price : Shs. {{ total_price }}</p>
+</body>
+</html>
