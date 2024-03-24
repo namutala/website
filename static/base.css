@@ -106,3 +106,25 @@ i{
     background: #FAA916;
     color: #fff;
 }
+.sidebar ul li a.active{
+    display: block;
+    color: #FAA916;
+    background: #ebe8e8;
+    border-left: 5px solid #FAA916;
+}
+.sidebar.closed{
+    overflow: hidden;
+    width: 70px;
+}
+.sidebar.closed ul li i{
+    margin: auto;
+}
+.sidebar.closed ul li span{
+    display: none;
+}
+/* .content*/
+.content{
+    width: 100%;
+    background: #ebe8e8;
+    border-radius: 20px;
+}
