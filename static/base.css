@@ -6,7 +6,7 @@
 }
 
 body{
-    height: 100vh; 
+    height: 110vh; 
     background: #ebe8e8;
 }
 
@@ -19,7 +19,7 @@ i{
     justify-content: space-between;
     align-items: center; 
     padding: 10px 20px;
-    background: #fff;
+    background: rgba(39, 39, 39, 0.4);
 }
 
 .top-navbar .search{ 
