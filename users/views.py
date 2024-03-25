@@ -11,6 +11,8 @@ def home(request):
 
 def login(request):
     return render(request, 'users/login.html')
+def logout(request):
+    return render(request, 'users/logout.html')
 
 def register(request):
     if request.method =='POST':
@@ -25,7 +27,7 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 
-@login_required(login_url='/login') 
+@login_required(login_url='login') 
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
