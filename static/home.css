@@ -5,19 +5,50 @@
 }
 
 .hero{
-    min-height: 100vh;
+    min-height: 125vh;
     width: 100%;
-    position: relative;
-    background: #eee;
+    position: relative; 
 }
 
 .hero::before {
-    background: red;
+    background: #FAA916;
     height: 100%;
     width: 100%; 
     content: '';
     position: absolute;
-    /* clip-path: circle(1500px at 90% -90%); */
-    clip-path: ellipse(100% 60% at 80% 30%);
-    transform: rotateY(30deg);
+    clip-path: circle(1000px at 85% -85%); 
+    /* clip-path: ellipse(100% 60% at 80% 30%);
+    transform: rotateY(30deg); */
 }
+
+.nav-top {
+    position: relative; 
+}
+
+
+.nav-links ul{
+    list-style: none;
+}
+
+.nav-links ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.nav-links ul li a{
+    transition: .2s ease;
+    font-weight: bold;
+}
+
+.nav-links ul li a:hover{
+    color: #fff!important;
+}
+
+a{
+    text-decoration: none!important;
+    color: #FFFFFF!important;
+}
+
+/* .logo h3{
+    color: #073B4C;
+} */
