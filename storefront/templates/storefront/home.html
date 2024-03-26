@@ -27,12 +27,17 @@
                             </ul>
                         </div>
                         <div class="signin">
-                            <a href="{% url 'login' %}" class="btn">Login</a>
+                            <a href="{% url 'login' %}">Login</a>
                         </div>
                     </div>
                 </div>
                 <div class="content">
-
+                    <div class="image">
+                        <img src="/static/images/kitchen.png" alt="">
+                        <img src="/static/images/kitchen.png" alt="">
+                        <img src="/static/images/grocery.png" alt="">
+                         
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,5 +57,10 @@
     <a href="{% url 'add-to-cart' item.id %}">Add to Cart</a>
     {% endfor %}
     {% endblock content %} -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script src="/static/js/home.js"></script>
 </body>
 </html>
