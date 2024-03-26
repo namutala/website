@@ -217,3 +217,16 @@ i{
     display: inline-block;
     background: #16fa34; 
 }
+
+
+/* shopping cart */
+.b-primary{
+    background: #FAA916;
+}
+
+
+.cart img{
+    max-width: 100%;
+    height: auto;
+    object-fit: fill;
+}
