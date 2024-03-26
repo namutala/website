@@ -66,23 +66,26 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-9">
-                        <div class="products">
+                        <div class="products"> 
                             <div class="row">
-                                <div class="col-6 col-md-3">
-                                    <div class="product-card">
+                                {% for item in product %}
+                                <div class="col-6 mt-2 col-md-4 text-center">
+                                    <div class="product-card shadow">
                                         <div class="row">
-                                            <div class="col-6">
-                                                <img src="/static/images/food.png" class="product-image" alt="">
+                                            <div class="col-12 product-image-holder">
+                                                <img src="{{ item.picture.url }}" class="product-image" alt="{{ item.title }}">
                                             </div>
-                                            <div class="col-6">
-                                                <span class="c-primary">Electronics</span>
-                                                <h3>Pizza Whotti</h3>
-                                                <h2 class="c-primary">$sussas</h2>
-                                                <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non dolores tenetur consequuntur ducimus dignissimos mollitia nihil dolorum corporis! Tempora, labore.</p>
+                                            <div class="col-12">
+                                                <span class="c-primary">{{item.category }}</span>
+                                                <h6>{{item.title }}</h6>
+                                                <h5 class="c-primary">Ush {{ item.price }}</h5>
+                                                <p class="mt-2 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non dolores  </p>
+                                                <a href="{% url 'add-to-cart' item.id %}" class="btn b-primary w-100" >Add to cart</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

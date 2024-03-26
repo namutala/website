@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .b-primary{
-    background: #FAA916;
+    background: #FAA916!important;
 }
 .c-primary{
     color: #FAA916;
@@ -116,4 +116,63 @@ a{
 
 .service-list ul{
     list-style-type: none;
+}
+
+.products {
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.products::-webkit-scrollbar {
+    width: 5px;  
+}
+
+.products::-webkit-scrollbar-track {
+    background-color: #eee;  
+}
+
+.products::-webkit-scrollbar-thumb {
+    background-color: #FAA916;  
+    border-radius: 10px;
+     
+}
+
+.products::-webkit-scrollbar-thumb:hover {
+    background-color: #FFC107;  
+}
+
+
+.product-card{
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card span{
+    font-size: .5em;
+}
+.product-card p, 
+.product-card button{
+    font-size: .7em!important;
+}
+.product-image-holder{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-image-holder img{
+    max-width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+/* .product-image{
+   width: 100%;
+   height: auto;
+} */
+
+.product-card a:hover{
+    background: #fff;
 }
