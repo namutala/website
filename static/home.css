@@ -22,7 +22,7 @@
     width: 100%; 
     content: '';
     position: absolute;
-    clip-path: circle(1000px at 85% -85%); 
+    clip-path: circle(1450px at 85% -85%); 
     /* clip-path: ellipse(100% 60% at 80% 30%);
     transform: rotateY(30deg); */
 }
@@ -89,8 +89,8 @@ a{
 
 .image{
     /* background: red;  */
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     margin-left: auto;
     overflow: hidden;
     display: flex;
