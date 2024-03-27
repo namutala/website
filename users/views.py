@@ -9,11 +9,6 @@ def home(request):
     login_url = reverse('login')
     return HttpResponse(f'<h1>Hello there</h1><a href="{login_url}">Login</a>')
 
-def login(request):
-    return render(request, 'users/login.html')
-def logout(request):
-    return render(request, 'users/logout.html')
-
 def register(request):
     if request.method =='POST':
         form = UserRegisterForm(request.POST)
