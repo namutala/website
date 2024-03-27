@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'users',
     'business',
     'storefront',
-    'bookings',
+    'services',
 ]
 
 MIDDLEWARE = [
