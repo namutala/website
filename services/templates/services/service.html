@@ -9,6 +9,10 @@
         {{service_provided.service_name}}
         {{service_provided.service_description}}
         {{service_provided.service_prices}}
+    
+      {% for image in service.images.all %}
+        <img src = "{{ image.image.url}}" alt ="{{service_provided.service_description}}">
+      {% endfor %}
     {% endfor %}
     {% endblock content %}
   </body>
