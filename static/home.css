@@ -11,7 +11,7 @@
 }
 
 .hero{
-    min-height: 120vh;
+    min-height: 125vh;
     width: 100%;
     position: relative; 
 }
@@ -89,8 +89,8 @@ a{
 
 .image{
     /* background: red;  */
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     margin-left: auto;
     overflow: hidden;
     display: flex;
