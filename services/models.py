@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class service(models.Model):
     service_name = models.ForeignKey(User, on_delete = models.CASCADE)
-    srvice_description = models.CharField(default ='service description', max_length=600)
+    service_description = models.CharField(default ='service description', max_length=600)
     service_prices = models.CharField(max_length = 100) 
     
 class booking(models.Model):

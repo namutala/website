@@ -5,12 +5,12 @@ def service_request(request):
     context = {
         'services_provided': service.objects.all()
     }
-    return(render, 'services/service.html', context)
+    return render(request, 'services/service.html', context)
 
 
 def booking_request(request):
     context = {
-        'booking request' :booking.objects.all()
+        'booking_requests' :booking.objects.all()
     }
-    return(render, 'services/booking.html', context)
+    return render(request, 'services/booking.html', context)
 

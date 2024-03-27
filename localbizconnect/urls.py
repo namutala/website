@@ -35,6 +35,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('business/', include('business.urls')),
     path('', include('storefront.urls')),
+    path('services/', include('services.urls')),
 ]
 
 if settings.DEBUG :

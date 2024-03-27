@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Services </title>
   </head>
-  <body></body>
+  <body>
+    {% block content%}
+    {% for service_provided in services_provided %}
+        {{service_provided.service_name}}
+        {{service_provided.service_description}}
+        {{service_provided.service_prices}}
+    {% endfor %}
+    {% endblock content %}
+  </body>
 </html>
