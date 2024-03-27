@@ -14,12 +14,15 @@ i{
     cursor: pointer;
 }
 
+a{
+    text-decoration: none!important;
+}
 .top-navbar{
     display: flex;
     justify-content: space-between;
     align-items: center; 
     padding: 10px 20px;
-    background: rgba(39, 39, 39, 0.4);
+    background: #fff;
 }
 
 .top-navbar .search{ 
@@ -39,7 +42,7 @@ i{
     height: 40px;
     padding-left: 30px;
     border-radius: 4px;
-    border: 1px solid #b4b1b1;
+    border: 1px solid #e7e7e7;
     outline: none;
     transition: .3s ease;
 }
@@ -216,4 +219,48 @@ i{
     width: 10px;
     display: inline-block;
     background: #16fa34; 
+}
+
+
+/* shopping cart */
+.b-primary{
+    background: #FAA916!important;
+}
+
+.b-primary.btn:hover{
+    background: #FFBC42!important;
+}
+
+.cart img{
+    max-width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.form-group label{
+    display: block;
+    margin-top: 15px;
+}   
+
+.form-group label::after{
+    content: '*';
+    color: red;
+}
+
+.form-group input, .form-group select, .form-group textarea{
+    width: 70%;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #00000052;
+    transition: .3s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus{
+    border: 2px solid #FAA916;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+}
+
+.form-group input, .form-group select{
+    outline: none;
+    height: 40px; 
 }

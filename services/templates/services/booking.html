@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookings</title>
+  </head>
+  <body>
+    {% block content %}
+    {% for booking_request in booking_requests %}
+        {{ booking_request.customer }}
+        {{ booking_request.service_booked}}
+        {{ booking_request.date_booked }}
+        {{ booking_request.start_date }}
+
+    {% endblock content %}
+  </body>
+</html>
+    

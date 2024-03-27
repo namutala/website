@@ -15,30 +15,84 @@
                 <div class="nav-top">
                     <div class="d-flex align-items-center justify-content-around py-3">
                         <div class="logo">
-                            <h3>Local Bizz</h3>
+                            <h3>LocalBizzConnect</h3>
                         </div>
                         <div class="nav-links  ">
                             <ul>
                                 <li><a href="">Home</a></li>
                                 <li><a href="">About</a></li>
-                                <li><a href="">Princing</a></li>
+                                <li><a href="">Pricing</a></li>
                                 <li><a href="">Testimonies</a></li>
                                 <li><a href="">Contact</a></li>
                             </ul>
                         </div>
-                        <div class="signin">
-                            <a href="{% url 'login' %}" class="btn">Login</a>
+                        <div class="signin d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping me-2 text-white"></i>
+                            <a href="{% url 'login' %}">Login</a>
                         </div>
                     </div>
                 </div>
-                <div class="content">
-
+                <div class="content d-flex align-items-center pe-4">
+                    <div class=" ms-auto">
+                        <h1>Connect your bussiness</h1>
+                        <h1 class="text-white text-center">World Wide.</h1>
+                    </div>
+                    <div class="image">
+                        <img src="/static/images/grocery.png" alt="">
+                        <img src="/static/images/kitchen.png" alt="">
+                        <!-- <img src="/static/images/shopping-cart.png" alt=""> -->
+                        <img src="/static/images/food.png" alt="">
+                    </div>
+                    <div class="icon"><i class="fa-solid fa-angles-down fa-bounce fs-1 fa-2xl"></i></div>
                 </div>
             </div>
         </div>
     </section>
     <section>
-        <div class="container p-5 m-5"></div>
+        <div class="container-fluid bg-light">
+            <div class="p-3">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        <div class="shadow py-2 text-white rounded b-primary service-list">
+                            <ul>
+                                <li>service 1</li>
+                                <li>service 1</li>
+                                <li>service 1</li>
+                                <li>service 1</li>
+                                <li>service 1</li>
+                                <li>service 1</li>
+                                <li>service 1</li>
+                                <li>service 1</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <div class="products"> 
+                            <div class="row">
+                                {% for item in product %}
+                                <div class="col-6 mt-2 col-md-4 text-center">
+                                    <div class="product-card shadow">
+                                        <div class="row">
+                                            <div class="col-12 product-image-holder">
+                                                <img src="{{ item.picture.url }}" class="product-image" alt="{{ item.title }}">
+                                            </div>
+                                            <div class="col-12">
+                                                <span class="c-primary">{{item.category }}</span>
+                                                <h6>{{item.title }}</h6>
+                                                <h5 class="c-primary">Ush {{ item.price }}</h5>
+                                                <p class="mt-2 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non dolores  </p>
+                                                <a href="{% url 'add-to-cart' item.id %}" class="btn b-primary w-100" >Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- {% block content %}
     {% for item in product %}
@@ -52,5 +106,10 @@
     <a href="{% url 'add-to-cart' item.id %}">Add to Cart</a>
     {% endfor %}
     {% endblock content %} -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script src="/static/js/home.js"></script>
 </body>
 </html>

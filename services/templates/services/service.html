@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Services </title>
+  </head>
+  <body>
+    {% block content%}
+    {% for service_provided in services_provided %}
+       <p>Service : {{service_provided.service_name}}<p>
+        <p>Service Description : {{service_provided.service_description}}<p>
+        <p>Price rates : {{service_provided.service_prices}}<p>
+        <img src = "{image.image1.url}" alt = "{service_provided.service_name}">
+        <img src = "{image.image2.url}" alt = "{service_provided.service_name}">
+        <img src = "{image.image3.url}" alt = "{service_provided.service_name}">
+        <img src = "{image.image4.url}" alt = "{service_provided.service_name}">
+        <img src = "{image.image5.url}" alt = "{service_provided.service_name}">
+        <img src = "{image.image6.url}" alt = "{service_provided.service_name}">
+
+    {% endfor %}
+    {% endblock content %}
+  </body>
+</html>
