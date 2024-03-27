@@ -14,6 +14,9 @@ i{
     cursor: pointer;
 }
 
+a{
+    text-decoration: none!important;
+}
 .top-navbar{
     display: flex;
     justify-content: space-between;
@@ -221,9 +224,12 @@ i{
 
 /* shopping cart */
 .b-primary{
-    background: #FAA916;
+    background: #FAA916!important;
 }
 
+.b-primary.btn:hover{
+    background: #FFBC42!important;
+}
 
 .cart img{
     max-width: 100%;
