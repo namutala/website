@@ -180,5 +180,22 @@ a{
 }
 
 
+.offcanvas{
+    background: transparent!important;
+    backdrop-filter: blur(10px);
+}
  
- 
+.offcanvas ul {
+    list-style: none;
+}
+
+.offcanvas ul li a{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    transition: .5s ease;
+}
+
+.offcanvas ul li a:hover{
+    background: #FFC107;
+}
