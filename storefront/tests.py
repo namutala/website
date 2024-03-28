@@ -1,8 +1,7 @@
 from django.test import TestCase
-from .models import *
-from django.urls import reverse
 from django.contrib.auth import get_user_model
-from django.utils import timezone
+from django.urls import reverse
+from .models import *
 
 class TestStorefront(TestCase):
     def setUp(self):
@@ -11,13 +10,8 @@ class TestStorefront(TestCase):
             email='aik@yahoo.fr',
             password='secret'
         )
-        self.customer = Customer.objects.create(
-            name='test customer',
-            phone_number='+9112345678',
-            email='aik@yahoo.com',
-            address='test address',
-            city='test city',
-        )
+        self.client.login(username='tester', password='secret')
+
         self.item = Item.objects.create(
             title='test item',
             picture='test_picture.png',
@@ -26,18 +20,45 @@ class TestStorefront(TestCase):
             label='limited'
         )
         self.item_detail = Item_details.objects.create(
-            item=self.item.title,
+            item=self.item,
             description='test description',
             key_features='test key_features'
         )
-        self.order_item = OrderItem.objects.create(item=self.item_detail.item)
-        self.order = Order.objects.create(
-            user=self.user,
-            items=self.item_detail.item,
-            start_date=timezone.now(),
-            ordered_date=timezone.now(),
-            ordered=False
-        )
-        #test if we make an inappropriate category, the count stays the same
+        self.order_item = OrderItem.objects.create(item=self.item)
 
+        # self.order = Order.objects.create(
+        #     user=self.user,
+        #     items=self.item_detail.item,
+        #     start_date=timezone.now(),
+        #     ordered_date=timezone.now(),
+        #     ordered=False
+        # )
 
+    def test_item_creation(self):
+        self.item.save()
+        latest_item = Item.objects.latest('id')
+        self.assertEqual(self.item.title, latest_item.title)
+        self.assertEqual(self.item.category, latest_item.category)
+
+    def test_item_update(self):
+        self.item.save()
+        self.item.title = 'New test item'
+        self.item.save()
+        self.assertEqual(self.item.title, 'New test item')
+
+    def test_item_false_category(self):
+        self.item.category = 'not my category'
+        latest_item = Item.objects.latest('id')
+        self.assertNotEqual(latest_item.category, 'not my category')
+
+    def test_item_detail_creation(self):
+        self.item_detail.save()
+        latest = Item_details.objects.latest('id')
+        self.assertEqual(self.item_detail.description, latest.description)
+
+    # def test_order_creation(self):
+    #     count = Order.objects.count()
+    #     order = Order.objects.create(user=self.user, start_date=timezone.now(), ordered_date=timezone.now(),
+    #                                  ordered=False)
+    #     order.items.add(self.order_item)
+    #     self.assertEqual(Order.objects.count(), count + 1)

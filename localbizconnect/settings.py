@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'business',
     'storefront',
     'services',
+    'reviews',
 ]
 
 MIDDLEWARE = [
