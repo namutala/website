@@ -55,7 +55,12 @@ class TestStorefront(TestCase):
         self.item_detail.save()
         latest = Item_details.objects.latest('id')
         self.assertEqual(self.item_detail.description, latest.description)
-
+    def test_item_detail_update(self):
+        self.item_detail.save()
+        self.item_detail.description = 'new description'
+        self.item_detail.save()
+        latest = Item_details.objects.latest('id')
+        self.assertEqual('new description', latest.description)
     # def test_order_creation(self):
     #     count = Order.objects.count()
     #     order = Order.objects.create(user=self.user, start_date=timezone.now(), ordered_date=timezone.now(),
