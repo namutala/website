@@ -52,12 +52,12 @@
 }
 
 .nav-links ul li a:hover{
-    color: #fff!important;
+    color: #FFFFFFFF!important;
 }
 
 a{
     text-decoration: none!important;
-    color: #FFFFFF!important;
+    color: #fff!important;
 }
 
 .signin i{
@@ -101,6 +101,7 @@ a{
     height: auto;
     width: 100%;
     /* opacity: 0;
+    transition: none;
     transition: opacity 1s ease-in-out; */
 }
 
