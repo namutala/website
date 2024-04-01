@@ -28,6 +28,7 @@ body{
 .side-content {
     width: 500px;
     /* background-size: cover; 
+    background repaet:no-repeat;
     background-image: url(download.jpeg); */
     border-radius: 20px 0 0 20px;
     background: #AED9E0;
@@ -46,11 +47,11 @@ body{
     padding: 10px 0;
     border-radius: 30px;
     width: 70%;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 .side-content p{
-    color: #464343;
+    color: #2e2b2b;
 }
 
 .login{
@@ -59,7 +60,7 @@ body{
 }
 
 .login h3{
-    color: #AED9E0;
+    color: #99c5cc;
     font-size: 3em;
     text-align: center;
 }
@@ -95,7 +96,7 @@ body{
     position: absolute;
     left: 5%;
     top: 30%;
-    color: #073B4C;
+    color: #074b62;
 }
 
 .login .action_button{
@@ -107,7 +108,7 @@ body{
     padding: 20px 0;
     width: 100%;
     transition: .3s ease;
-    background: rgb(255,255,255);
+    background: rgb(241, 239, 239);
     background: linear-gradient(144deg, rgba(255,255,255,1) 0%, rgba(250,169,22,1) 48%);
 }
 
