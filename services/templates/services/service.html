@@ -6,17 +6,20 @@
   <body>
     {% block content%}
     {% for service_provided in services_provided %}
-       <p>Service : {{service_provided.service_name}}<p>
-        <p>Service Description : {{service_provided.service_description}}<p>
-        <p>Price rates : {{service_provided.service_prices}}<p>
-        <img src = "{image.image1.url}" alt = "{service_provided.service_name}">
-        <img src = "{image.image2.url}" alt = "{service_provided.service_name}">
-        <img src = "{image.image3.url}" alt = "{service_provided.service_name}">
-        <img src = "{image.image4.url}" alt = "{service_provided.service_name}">
-        <img src = "{image.image5.url}" alt = "{service_provided.service_name}">
-        <img src = "{image.image6.url}" alt = "{service_provided.service_name}">
+       <p>Service : {{service_provided.service_name}}</p>
+        <p>Service Description : {{service_provided.service_description}}</p>
+        <p>Price rates : {{service_provided.service_prices}}</p>
+        <p>Location : {{ service_provided.location }} </p>
+        <p>Contact : {{ service_provided.Contact }} </p>
+        <img src = "{{ service_provided.image1.url }}" alt = "service images">
+        <img src = "{{ service_provided.image2.url }}" alt = "service images">
+        <img src = "{{ service_provided.image3.url }}" alt = "service images">
+        <img src = "{{ service_provided.image4.url }}" alt = "service images">
+        <img src = "{{ service_provided.image5.url }}" alt = "service images">
+        <img src = "{{ service_provided.image6.url }}" alt = "service images">
 
     {% endfor %}
     {% endblock content %}
   </body>
 </html>
+
