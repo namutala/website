@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from PIL import Image
 
 class service(models.Model):
     service_name = models.CharField(max_length = 100)
