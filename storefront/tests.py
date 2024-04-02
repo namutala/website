@@ -67,3 +67,18 @@ class TestStorefront(TestCase):
     #                                  ordered=False)
     #     order.items.add(self.order_item)
     #     self.assertEqual(Order.objects.count(), count + 1)
+    def test_view_home(self):
+        response = self.client.get(reverse('Item-list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "storefront/home.html")
+    def test_prdouct_details_view(self):
+        response = self.client.get(reverse('item-details'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "storefront/Item_details.html")
+    def test_add_to_cart(self):
+        self.item.save()
+        query = Item.objects.latest('id')
+        url = self.client.get(reverse('add-to-cart', kwargs={'item_id': query.id}))
+        expected_url = '/cart/'
+        self.assertEqual(url.status_code, 302)
+        self.assertRedirects(url, expected_url, status_code=302)

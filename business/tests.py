@@ -48,3 +48,5 @@ class BusinessTests(TestCase):
         query_from_business = Business.objects.filter(owner=self.user).first()
         url = reverse('catalogue', kwargs={'pk': query_from_business.pk})
         self.assertEqual(url, '/business/'+str(count))
+        url = self.client.get(reverse('catalogue', kwargs={'pk': query_from_business.pk}))
+        self.assertEqual(url.status_code, 200)
