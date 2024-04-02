@@ -13,7 +13,8 @@ class service(models.Model):
     image4 = models.ImageField(upload_to='service_images', blank=True)
     image5 = models.ImageField(upload_to='service_images', blank=True)
     image6 = models.ImageField(upload_to='service_images', blank=True)
-    
+    location = models.CharField(max_length = 100, default = 'Kampala')
+    Contact = models.IntegerField(default =+256)
     def __str__(self):
         return self.service_name
     
