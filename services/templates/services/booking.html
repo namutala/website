@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bookings</title>
-  </head>
-  <body>
-    <form action="{% url 'make_booking' %}" method="post">
+<head>
+    <title>Book Service</title>
+</head>
+<body>
+    <h1>Book {{ service.service_name }}</h1>
+    <form method="post">
         {% csrf_token %}
-      {% block content %}
-      {% for booking_request in booking_requests %}
-          {{ booking_request.customer }}
-          {{ booking_request.service_booked}}
-          {{ booking_request.date_booked }}
-          {{ booking_request.start_date }}
-        <button type= 'submit' >Make Booking</button>
+        {{ form.as_p }}
+        <button type="submit">Book Now</button>
     </form>
-
-    {% endfor %}
-    {% endblock %}
-  </body>
+</body>
 </html>
-
     

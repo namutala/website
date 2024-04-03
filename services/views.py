@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import service, booking
 from .forms import bookingform
 
-def service_request(request):
+def service_request(request, service_id):
     context = {
         'services_provided': service.objects.all()
     }
@@ -21,46 +21,3 @@ def book_service(request, service_id):
     else:
         form = bookingform()
     return render(request, 'services/booking.html', {'form': form, 'service': service})
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-context = {
-        'booking_requests' :booking.objects.all()
-    }
-    return render(request, 'services/booking.html', context)

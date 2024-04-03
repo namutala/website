@@ -104,7 +104,7 @@
                       <p><span class="fw-bold">Location</span> : {{ service_provided.location }} </p>
                       <p><span class="fw-bold">Contact</span> : {{ service_provided.Contact }} </p>
                     </div>
-                    <a href="#" class="btn b-primary mt-5 w-100" >Book Now</a>
+                    <a href="{% url 'book-service' service_id =service.id %}" class="btn b-primary w-100" >Book Now</a>
                   </div>
                   
                   {% endfor %}
