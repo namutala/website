@@ -17,13 +17,19 @@ class service(models.Model):
     Contact = models.IntegerField(default =+256)
     def __str__(self):
         return self.service_name
-    
+
+STATUS_CHOICE = (
+    ('Pending','Pending'),
+    ('Booked', 'Booked'),
+    ('Cancelled','Cancelled')
+)
 class booking(models.Model):
     customer = models.ForeignKey(User, on_delete = models.CASCADE)
     service_booked = models.ForeignKey(service, on_delete = models.CASCADE)
     date_booked = models.DateTimeField(default =timezone.now)
     start_date = models.DateTimeField(auto_now_add=True)
-    
+    status = models.CharField(choices= STATUS_CHOICE, max_length=18, default = 'Pending')
+      
     def __str__(self):
         return f'Booking of {self.service_booked} by {self.customer}'
     
