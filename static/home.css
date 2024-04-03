@@ -200,3 +200,18 @@ a{
 .offcanvas ul li a:hover{
     background: #FFC107;
 }
+
+.service{
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.services img{ 
+    width: 100%;
+    min-height: auto;
+}
+
+
+.service p{
+    margin: 5px 0px!important;
+}
