@@ -29,6 +29,7 @@ class booking(models.Model):
     date_booked = models.DateTimeField(default =timezone.now)
     start_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices= STATUS_CHOICE, max_length=18, default = 'Pending')
+    
       
     def __str__(self):
         return f'Booking of {self.service_booked} by {self.customer}'

@@ -4,15 +4,20 @@
     <title>Bookings</title>
   </head>
   <body>
-    {% block content %}
-    {% for booking_request in booking_requests %}
-        {{ booking_request.customer }}
-        {{ booking_request.service_booked}}
-        {{ booking_request.date_booked }}
-        {{ booking_request.start_date }}
-        <button type= 'submit' >Make Bookings</button>
+    <form action="{% url 'make_booking' %}" method="post">
+        {% csrf_token %}
+      {% block content %}
+      {% for booking_request in booking_requests %}
+          {{ booking_request.customer }}
+          {{ booking_request.service_booked}}
+          {{ booking_request.date_booked }}
+          {{ booking_request.start_date }}
+        <button type= 'submit' >Make Booking</button>
+    </form>
 
-    {% endblock content %}
+    {% endfor %}
+    {% endblock %}
   </body>
 </html>
+
     
