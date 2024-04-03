@@ -27,6 +27,8 @@
     transform: rotateY(30deg); */
 }
 
+
+
 .nav-top {
     position: fixed; 
     width: 100%;
@@ -199,4 +201,39 @@ a{
 
 .offcanvas ul li a:hover{
     background: #FFC107;
+}
+
+.service{
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.services img{ 
+    width: 100%;
+    min-height: auto;
+}
+
+
+.service p{
+    margin: 5px 0px!important;
+}
+
+.service-page .hero::before {
+    background: #fff;
+    height: 100%;
+    width: 100%; 
+    content: '';
+    position: absolute;
+    clip-path: circle(120% at 50% 230%); 
+    /* clip-path: ellipse(100% 60% at 80% 30%);
+    transform: rotateY(30deg); */
+}
+
+.service-page .hero{
+    background: #FAA916;
+    overflow: hidden;
+}
+
+.service-page .content .icon{
+    left: 50%;
 }

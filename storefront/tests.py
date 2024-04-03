@@ -71,7 +71,7 @@ class TestStorefront(TestCase):
         response = self.client.get(reverse('Item-list'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "storefront/home.html")
-    def test_prdouct_details_view(self):
+    def test_product_details_view(self):
         response = self.client.get(reverse('item-details'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "storefront/Item_details.html")
@@ -82,3 +82,4 @@ class TestStorefront(TestCase):
         expected_url = '/cart/'
         self.assertEqual(url.status_code, 302)
         self.assertRedirects(url, expected_url, status_code=302)
+    #def test_view_cart(self):
