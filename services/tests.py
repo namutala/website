@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .models import service, booking
 from django.contrib.auth import get_user_model
+from django.utils import timezone
+from django.urls import reverse
 
 class ServiceTests(TestCase):
     def setUp(self):
@@ -16,6 +18,11 @@ class ServiceTests(TestCase):
             location="test location",
             Contact=256,
             image1="test_image1.png",
+            image2="test_image2.png",
+            image3="test_image3.png",
+            image4="test_image4.png",
+            image5="test_image5.png",
+            image6="test_image6.png"
         )
         self.booking = booking.objects.create(
             customer=self.user,
@@ -32,4 +39,27 @@ class ServiceTests(TestCase):
         latest_service = service.objects.latest('id')
         latest_booking = booking.objects.latest('id')
         self.assertEqual(latest_booking.service_booked, self.service)
+
+        #Testing two bookings for one service
+        booking2 = booking.objects.create(
+            customer=self.user,
+            service_booked=self.service,
+            date_booked=timezone.now() + timezone.timedelta(days=1)
+        )
+        booking2.save()
+        latest_booking2 = booking.objects.latest('id')
+        self.assertNotEqual(latest_booking2.id, latest_booking.id)
+        self.assertEqual(booking.objects.count(), 2)
+    def test_services_home_view(self):
+        self.service.save()
+        response = self.client.get('/services/')
+        self.assertEqual(response.status_code, 200)
+        response = self.client.get(reverse('services'))
+        self.assertEqual(response.status_code, 200)
+    def test_services_bookings_view(self):
+        self.service.save()
+        response = self.client.get('/services/bookings/')
+        self.assertEqual(response.status_code, 200)
+        response = self.client.get(reverse('booking-request'))
+        self.assertEqual(response.status_code, 200)
 
