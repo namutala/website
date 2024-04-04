@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Book {{ service.service_name }} </h1>
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Book Now</button>
