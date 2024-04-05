@@ -103,8 +103,9 @@
 
                       <p><span class="fw-bold">Location</span> : {{ service_provided.location }} </p>
                       <p><span class="fw-bold">Contact</span> : {{ service_provided.Contact }} </p>
+                      <br/>ID: {{ service_provided.id }}
                     </div>
-                    <a href="{% url 'book-service' service_id =service.id %}" class="btn b-primary w-100" >Book Now</a>
+                    <button  type = 'button' value = "{{ service_provided.id }}" class = "btn btn-secondary" id = 'book-now'>Book Now </button>
                   </div>
                   
                   {% endfor %}
