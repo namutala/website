@@ -67,6 +67,7 @@ class Item(models.Model):
     picture = models.ImageField(default='default.jpg', upload_to = 'item_pics')
     price  = models.FloatField()
     category = models.CharField(choices =CATEGORY_CHOICES, max_length =30, default =None)
+    short_description = models.TextField(max_length =70, default ='description')
     label = models.CharField(choices = LABEL_CHOICES, max_length = 15, default =None)
     
     def __str__(self):
@@ -74,7 +75,6 @@ class Item(models.Model):
     
 class Item_details(models.Model):
     item = models.OneToOneField(Item, on_delete = models.CASCADE, related_name ='details')
-    description = models.TextField(max_length =500)
     key_features = models.TextField(max_length= 200) 
 
     def __str__(self):
