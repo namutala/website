@@ -18,8 +18,10 @@ def product_details(request):
 
 def add_to_cart(request, item_id):
     item = get_object_or_404(Item, id=item_id)
+    quantity = int(request.POST.get('quantity', 1))
+    
     cart = request.session.get('cart', {})
-    cart[item_id] = cart.get(item_id, 0) + 1
+    cart[item_id] = cart.get(item_id, 0) + quantity
     request.session['cart'] = cart
     return redirect('cart-view')
 
@@ -28,8 +30,15 @@ def cart_view(request):
     item_ids = cart.keys()
     items = Item.objects.filter(id__in=item_ids)
     cart_items = [(item, cart[str(item.id)]) for item in items]
+    total_items = sum(quantity for _, quantity in cart_items)
     total_price = sum(item.price * quantity for item, quantity in cart_items)
-    return render(request, 'storefront/cart.html', {'cart_items': cart_items, 'total_price': total_price})
+    return render(request, 'storefront/cart.html', {'cart_items': cart_items, 'total_price': total_price, 'total_items' :total_items})
+
+def remove_item(request, item_id):
+    cart =request.session.get('cart', {})
+    del cart[str(item_id)] # remove item from the cart
+    request.session['cart'] = cart
+    return redirect('cart-view')
 
 
 def Order_details(request):
