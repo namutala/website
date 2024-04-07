@@ -28,18 +28,8 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-                    </div>
-                    <div class="col-2">
-                        <i class="fa-solid fa-minus"></i>
-                        <input type="text" class="w-50 text-center" value="{{ quantity }}">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
-                    <div class="col-3"><p>{{ item.price }}</p></div>
-                    <div class="col-3"><p>Total</p></div>
-                </div>
-                {% endfor %}
-=======
+
+
                         <div class="col-2">
                             <i class="fa-solid fa-minus"></i>
                             <input type="text" class="w-50 text-center" value="{{ quantity }}">
@@ -49,8 +39,6 @@
                         <div class="col-3"><p data-unit="{{ item.price }}" class="total_quantity"> </p></div>
                     </div> 
             {% endfor %}
-            
->>>>>>> 18a3cd59fc721b1892f63768dc7b834ea94a2868
 
                 <div class="bg-light mt-auto">
                     <a href="{% url 'Item-list' %}">
