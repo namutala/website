@@ -17,11 +17,11 @@ class TestStorefront(TestCase):
             picture='test_picture.png',
             price=100.10,
             category='music',
-            label='limited'
+            label='limited',
+            short_description='test description',
         )
         self.item_detail = Item_details.objects.create(
             item=self.item,
-            description='test description',
             key_features='test key_features'
         )
         self.order_item = OrderItem.objects.create(item=self.item)
@@ -54,13 +54,13 @@ class TestStorefront(TestCase):
     def test_item_detail_creation(self):
         self.item_detail.save()
         latest = Item_details.objects.latest('id')
-        self.assertEqual(self.item_detail.description, latest.description)
+        self.assertEqual(self.item_detail.key_features, latest.key_features)
     def test_item_detail_update(self):
         self.item_detail.save()
-        self.item_detail.description = 'new description'
+        self.item_detail.key_features = 'new key-feature'
         self.item_detail.save()
         latest = Item_details.objects.latest('id')
-        self.assertEqual('new description', latest.description)
+        self.assertEqual('new key-feature', latest.key_features)
     # def test_order_creation(self):
     #     count = Order.objects.count()
     #     order = Order.objects.create(user=self.user, start_date=timezone.now(), ordered_date=timezone.now(),
