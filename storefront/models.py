@@ -23,19 +23,11 @@ class Customer(models.Model):
     def __str__(self):
         return f'{self.name}'
     
-#class Ordered(models.Model):
- #   STATUS = (
-  #      ('Pending', 'Pending'),
-   #     ('Out of delivery', 'Out of delivery'),
-    #    ('Delivered', 'Delivered'),
-     #        )
-    #customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
-    #product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
-    #date_created = models.DateTimeField(auto_now_add=True, null=True)
-    #status = models.CharField(max_length=200,null=True,blank=True)
     
     def __str__(self):
         return f'{self.customer} order' 
+    
+    
 # refresh
 CATEGORY_CHOICES = (
     ('food and beverages','food and beverages'),
@@ -90,6 +82,7 @@ class Order(models.Model):
     start_date = models.DateTimeField(default=timezone.now, editable=False)
     ordered_date = models.DateTimeField(default=timezone.now, editable=False)
     ordered = models.BooleanField(default=False)
+    
 
     def save(self, *args, **kwargs):
         current_user = get_user()
