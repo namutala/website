@@ -63,7 +63,7 @@ def create_order(request):
     
     #clear the cart 
         request.session['cart'] = {}
-        return redirect('oder_detail', order_id =order.id)
+        return redirect('oder-details', order_id =order.id)
 
     return render(request, 'storefront/create_order.html')
 
@@ -71,6 +71,7 @@ def create_order(request):
 def order_detail(request, order_id):
     order = get_object_or_404(Order, id = order_id, user = request.user)
     return render(request, 'storefront/order_detail.html',{'order': order})
+
 
 
     

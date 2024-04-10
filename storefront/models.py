@@ -61,6 +61,7 @@ class Item(models.Model):
     category = models.CharField(choices =CATEGORY_CHOICES, max_length =30, default =None)
     short_description = models.TextField(max_length =70, default ='description')
     label = models.CharField(choices = LABEL_CHOICES, max_length = 15, default =None)
+    quantity = models.IntegerField(default = 1)
     
     def __str__(self):
         return self.title
@@ -79,20 +80,28 @@ STATUS = (
     ('Cancelled', 'Cancelled')
                 )
 class Order(models.Model):
-    user  = models.ForeignKey(User, on_delete= models.CASCADE)
+    user  = models.ForeignKey(get_user_model(), on_delete= models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, default = 0)
     total_price = models.DecimalField(max_digits=20, decimal_places=1, default = 0)
     location = models.CharField(max_length= 40, null= False, default= 'enter delivery location')
     order_status = models.CharField(max_length=20, choices= STATUS, default = 'Pending')
     created_at = models.DateTimeField(default= timezone.now)
+    
+    def save(self, *args, **kwargs):
+        # Ensure that the user is set before saving the order
+        if not self.user:
+            raise ValueError("User must be set before saving the order.")
+        super().save(*args, **kwargs)
      
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='itemss', on_delete= models.CASCADE, default = 0)
     item = models.ForeignKey(Item, on_delete =models.CASCADE)
-    price = models.DecimalField(max_digits= 20, decimal_places=1,default= '0')
+    quantity = models.IntegerField(default = 1)
+    price = models.DecimalField(max_digits= 20, decimal_places=1,default= 0)
     
 
     def save(self, *args, **kwargs):
-        current_user = get_user()
+        current_user = get_user(kwargs.get('request'))
         if isinstance(current_user, AnonymousUser):
             # If the user is not logged in, handle it accordingly
             # For example, you can set user to None or any default user
