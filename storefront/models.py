@@ -72,16 +72,23 @@ class Item_details(models.Model):
     def __str__(self):
         return f'{self.item.title} description'
          
-    
-class OrderItem(models.Model):
-    item = models.ForeignKey(Item, on_delete =models.CASCADE)
 
+STATUS = (
+    ('Pending', 'Pending'),
+    ('Delivered','Delivered'),
+    ('Cancelled', 'Cancelled')
+                )
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
-    items = models.ManyToManyField(OrderItem)
-    start_date = models.DateTimeField(default=timezone.now, editable=False)
-    ordered_date = models.DateTimeField(default=timezone.now, editable=False)
-    ordered = models.BooleanField(default=False)
+    user  = models.ForeignKey(User, on_delete= models.CASCADE)
+    total_price = models.DecimalField(max_digits=20, decimal_places=1, default = 0)
+    location = models.CharField(max_length= 40, null= False, default= 'enter delivery location')
+    order_status = models.CharField(max_length=20, choices= STATUS, default = 'Pending')
+    created_at = models.DateTimeField(default= timezone.now)
+     
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, related_name='itemss', on_delete= models.CASCADE, default = 0)
+    item = models.ForeignKey(Item, on_delete =models.CASCADE)
+    price = models.DecimalField(max_digits= 20, decimal_places=1,default= '0')
     
 
     def save(self, *args, **kwargs):

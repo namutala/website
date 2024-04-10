@@ -1,9 +1,17 @@
-<html>
-<head>
-    <title>Cart details</title>
-</head>
-<body>
-    <p> not yet implemented</p>
-    
-</body>
-</html>
+<!-- This template is for displaying the order details -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Order Detail</h2>
+    <p><strong>Order ID:</strong> {{ order.id }}</p>
+    <p><strong>Total Price:</strong> {{ order.total_price }}</p>
+    <p><strong>Location:</strong> {{ order.location }}</p>
+    <h3>Ordered Items:</h3>
+    <ul>
+        {% for item in order.orderitem_set.all %}
+            <li>{{ item.item.title }} - Quantity: {{ item.quantity }} - Price: {{ item.price }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
