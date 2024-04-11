@@ -79,13 +79,17 @@ STATUS = (
     ('Delivered','Delivered'),
     ('Cancelled', 'Cancelled')
                 )
+PAYMENT = (
+    ('Cash On Delivery', 'Cash On Delivery'),
+)
 class Order(models.Model):
     user  = models.ForeignKey(get_user_model(), on_delete= models.CASCADE)
-    item = models.ForeignKey(Item, on_delete=models.CASCADE, default = 0)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, null = True)
     total_price = models.DecimalField(max_digits=20, decimal_places=1, default = 0)
     location = models.CharField(max_length= 40, null= False, default= 'enter delivery location')
     order_status = models.CharField(max_length=20, choices= STATUS, default = 'Pending')
     created_at = models.DateTimeField(default= timezone.now)
+    payment_method = models.CharField(choices= PAYMENT, default = 'Cash On Delivery', max_length= 30)
     
     def save(self, *args, **kwargs):
         # Ensure that the user is set before saving the order
@@ -93,11 +97,6 @@ class Order(models.Model):
             raise ValueError("User must be set before saving the order.")
         super().save(*args, **kwargs)
      
-class OrderItem(models.Model):
-    order = models.ForeignKey(Order, related_name='itemss', on_delete= models.CASCADE, default = 0)
-    item = models.ForeignKey(Item, on_delete =models.CASCADE)
-    quantity = models.IntegerField(default = 1)
-    price = models.DecimalField(max_digits= 20, decimal_places=1,default= 0)
     
 
     def save(self, *args, **kwargs):

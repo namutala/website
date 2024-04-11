@@ -3,11 +3,21 @@
 
 {% block content %}
 <div class="container">
-    <h2>Create Order</h2>
+    <h2>ORDER DETAILS</h2>
     <form method="POST">
         {% csrf_token %}
         
+        <p>Choose your preferred payment option Payment Method : {{ form.payment_method }}</p>
+        
+        <p>This is the total amount you will pay upon delivery Total amount:{{ form.total_price }} <p>
+
+        <p>The platfrom will allow you to choose your preferred delivery location and it will be delivered to the door step Delivery Location:  {{form.location}}</p> 
+
+        <p>Localbizconnect and its users are in postion to monitor the progress of orders 
+            Order date: {{ form.created_at}}</p>
+        <p> </p>
         <button type="submit" class="btn btn-primary">Place Order</button>
     </form>
 </div>
 {% endblock %}
+
