@@ -40,12 +40,50 @@ def remove_item(request, item_id):
     request.session['cart'] = cart
     return redirect('cart-view')
 
+<<<<<<< HEAD
 
 def Order_details(request):
     context = {
         'Orders' : Order.objects.all()
     }
     return render(request, 'storefront/Order_details.html', context)
+=======
+@login_required
+def create_order(request):
+    if request.method == 'POST':
+    #retrieving cart items
+        cart = request.session.get('cart', {})
+    #create new order 
+        order = Order.objects.create(user = request.user, total_price =0, location = 'your location')
+    
+    #calculate total price and create order items
+        total_price = 0
+        for item_id, quantity in cart.items():
+            item = get_object_or_404(Item, id = item_id)
+            price = item.price
+            total_price += price *quantity
+            OrderItem.objects.create(order= order, item = item, quantity = quantity, price= price )
+        
+    #update total price in the order
+        order.total_price = total_price
+        order.save()
+    
+    #clear the cart 
+        request.session['cart'] = {}
+        return redirect('oder-details', order_id =order.id)
+
+    return render(request, 'storefront/create_order.html')
+
+@login_required
+def order_detail(request, order_id):
+    order = get_object_or_404(Order, id = order_id, user = request.user)
+    return render(request, 'storefront/order_detail.html',{'order': order})
+
+
+
+    
+    
+>>>>>>> 43d7502b476db0558d04235a364da895b44c6b79
 
 def Item_list(request):
     context = {

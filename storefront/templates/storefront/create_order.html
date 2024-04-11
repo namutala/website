@@ -1,4 +1,4 @@
-<!-- This template is for creating an order -->
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -6,7 +6,7 @@
     <h2>Create Order</h2>
     <form method="POST">
         {% csrf_token %}
-        <!-- You can add form fields if needed -->
+        
         <button type="submit" class="btn btn-primary">Place Order</button>
     </form>
 </div>
