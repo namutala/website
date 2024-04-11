@@ -66,8 +66,8 @@
                     <h6 class="text-muted">TOTAL COST:</h6>
                     <h5>Ugx. {{ total_price }}</h5></h5>
                 </div>
-                <a href="{% url 'Item-list' %}" class="btn btn-sm btn-primary w-100">
-                    Order
+                <a href="{% url 'create-order' total_price=total_price %}" class="btn btn-sm btn-primary w-100">
+                    Checkout
                     <i class="fa-regular fa-hand-point-right ms-1"></i>
                 </a>
             </div>

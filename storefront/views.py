@@ -63,7 +63,8 @@ def create_order(request, total_price= None):
             return redirect('Item-list')
     else:
         form = OrderForm(initial={'total_price': total_price})
-    return render(request, 'storefront/create_order.html', {'form': form})
+    return render(request, 'storefront/create_order.html', {'form': form, 'total_price': total_price})
+
 
 
 def Item_list(request):
