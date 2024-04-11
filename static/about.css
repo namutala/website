@@ -11,3 +11,8 @@
     min-height: 100vh;
     background-color: #ddd;
 }
+.container{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
