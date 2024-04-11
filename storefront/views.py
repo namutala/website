@@ -5,7 +5,6 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .forms import OrderForm
 from django.contrib import messages
-
 def home(request):
     context ={
         'product' :Item.objects.all()
@@ -43,6 +42,14 @@ def remove_item(request, item_id):
     request.session['cart'] = cart
     return redirect('cart-view')
 
+
+
+def Order_details(request):
+    context = {
+        'Orders' : Order.objects.all()
+    }
+    return render(request, 'storefront/Order_details.html', context)
+
 @login_required
 def create_order(request, total_price= None):
     if request.method == 'POST':
@@ -57,8 +64,6 @@ def create_order(request, total_price= None):
     else:
         form = OrderForm(initial={'total_price': total_price})
     return render(request, 'storefront/create_order.html', {'form': form})
-
-
 
 
 def Item_list(request):

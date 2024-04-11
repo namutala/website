@@ -74,6 +74,8 @@ class Item_details(models.Model):
         return f'{self.item.title} description'
          
 
+
+
 STATUS = (
     ('Pending', 'Pending'),
     ('Delivered','Delivered'),
