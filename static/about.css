@@ -66,6 +66,10 @@
     color: #FAA916;
     font-size: 30px;
     padding: 0px 10px;
+    border: 2px solid #FAA916;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 125%;
 }
 .content-section .social i:hover{
     color: #3d3d3d;
