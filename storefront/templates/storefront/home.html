@@ -21,9 +21,9 @@
         <div class="offcanvas-body"> 
             <ul>
                 <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Priciing</a></li>
-                <li><a href="">Testimonies</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">My account</a></li>
+                <li><a href="">New Business</a></li>
                 <li><a href="">Contact</a></li>
 
             </ul>
@@ -42,10 +42,10 @@
                             <ul>
                                 <li><a href="{% url 'Item-list' %}">Home</a></li>
                                 <li><a href="{% url 'services' %}">Services</a></li>
-                                
                                 <li><a href="{% url 'profile' %}">My account</a></li>
                                 <li><a href="{% url 'register_biz' %}">New Business</a></li>
                                 <li><a href="#footer">Contact</a></li>
+                                <li><a href = "{% url 'profile' %}"> Profile</a><li>
                             </ul>
                         </div>
                         <div class="signin d-flex align-items-center">
@@ -73,20 +73,21 @@
         </div>
     </section>
     <section>
+      
         <div class="container-fluid bg-light">
             <div class="p-3">
                 <div class="row">
                     <div class="col-12 col-md-3">
                         <div class="shadow py-2 text-white rounded b-primary service-list">
                             <ul>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
+                                <p> Services<p>
+                                <a href = "{% url 'services' %}"
+                                {% for service_name in service_names %}
+                                    <li>{{ service_name }}</li>
+                                {% endfor %}
+                                </a>
+                               
+                                
                             </ul>
                         </div>
                     </div>
