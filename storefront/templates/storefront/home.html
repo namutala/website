@@ -42,13 +42,16 @@
                             <ul>
                                 <li><a href="{% url 'Item-list' %}">Home</a></li>
                                 <li><a href="{% url 'services' %}">Services</a></li>
-                                <li><a href="">Pricing</a></li>
-                                <li><a href="">Testimonies</a></li>
-                                <li><a href="">Contact</a></li>
+                                
+                                <li><a href="{% url 'profile' %}">My account</a></li>
+                                <li><a href="{% url 'register_biz' %}">New Business</a></li>
+                                <li><a href="#footer">Contact</a></li>
                             </ul>
                         </div>
                         <div class="signin d-flex align-items-center">
+                            <a href = "{% url 'cart-view' %}">
                             <i class="fa-solid fa-cart-shopping me-2 text-white"></i>
+                            </a>
                             <a href="{% url 'login' %}">Login</a>
                         </div>
                     </div>
@@ -116,7 +119,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="footer">
         <div class="b-primary footer p-3">
             <div class="container">
                 <div class="row">
@@ -132,11 +135,11 @@
                                 Sector-57, Makerere
                                 Kikoni West, Zone 2, Off Nanfumbambi Road.
                               </div>
-                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">+256-712258879</a></div>
+                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">+256-741594439</a></div>
             
                               <div class="gem-contacts-item gem-contacts-address mt-2">Reg. Office :<br> Wilsen House, D2/3,
                                 2th Floor, Wilsen Tower, Section 2</div>
-                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>+256-781288799</a></div>
+                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>+256-776890699</a></div>
             
                             </div>
                           </div>
@@ -148,10 +151,10 @@
                               <li class="clearfix gem-pp-posts">
                                 <div class="gem-pp-posts-text">
                                   <div class="gem-pp-posts-item">
-                                    <a href="#">Want to start Your Own Play School.
+                                    <a href="#">Want to start Your Own Online Business.
                                     </a>
                                   </div>
-                                  <div class="gem-pp-posts-date">Call +256-712258879</div>
+                                  <div class="gem-pp-posts-date">Call +256-755835030</div>
                                 </div>
                               </li>
                               <li class="clearfix gem-pp-posts">
@@ -160,16 +163,16 @@
                                     <a href="#">Now we are in Wakiso district,Now along Hoima Road.
                                     </a>
                                   </div>
-                                  <div class="gem-pp-posts-date">Call +256-781288799, +256-971258799</div>
+                                  <div class="gem-pp-posts-date">Call +256-774355365, +256-755835030</div>
                                 </div>
                               </li>
                               <li class="clearfix gem-pp-posts">
                                 <div class="gem-pp-posts-text">
                                   <div class="gem-pp-posts-item">
-                                    <a href="">Now we are in Wakiso, Admission open
+                                    <a href="">Now we are in Wakiso
                                     </a>
                                   </div>
-                                  <div class="gem-pp-posts-date">Call +256-714558799, +256-71225839</div>
+                                  <div class="gem-pp-posts-date">Call +256-755835030, +256-774355367</div>
                                 </div>
                               </li>
         
