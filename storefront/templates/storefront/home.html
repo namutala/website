@@ -80,10 +80,10 @@
                     <div class="col-12 col-md-3">
                         <div class="shadow py-2 text-white rounded b-primary service-list">
                             <ul>
-                                <p> Services<p>
+                                <p>Services<p>
                                 <a href = "{% url 'services' %}"
                                 {% for service_name in service_names %}
-                                    <li>{{ service_name }}</li>
+                                <li>{{ service_name }}</li>
                                 {% endfor %}
                                 </a>
                                

@@ -7,14 +7,18 @@
     <form method="POST">
         {% csrf_token %}
         
-        <p>Choose your preferred payment option Payment Method : {{ form.payment_method }}</p>
-        
-        <p>This is the total amount you will pay upon delivery Total amount: Shs.{{ total_price }} <p>
-
-        <p>The platfrom will allow you to choose your preferred delivery location and it will be delivered to the door step Delivery Location:  {{form.location}}</p> 
-
+        <p><h3> Payment options </h3>
+        <p>LocalBizConnect offers a wide range of payment options for orders made by our customers. Choose your preferred payment option here  <p>
+            <li>Payment Method  {{ form.payment_method }}</li> </p>
+        <p><h3>Total payment upon delivery</h3>
+        <p>This is the total amount you will pay upon delivery of your order 
+            <li>Total amount: Shs.{{ total_price }} </li></p>
+        <p><h3>Delivery details</h3></p>
+        <p>The platfrom will allow you to choose your preferred delivery location and it will be delivered to the door step 
+            <li>Delivery Location:  {{form.location}}</li></p> 
+        <p><h3>Order date </h3></p>
         <p>Localbizconnect and its users are in postion to monitor the progress of orders 
-            Order date: {{ form.created_at}}</p>
+            <li>Order date: {{ form.created_at}}</li></p>
         <p> </p>
         <button type="submit" class="btn btn-primary">Place Order</button>
     </form>
