@@ -11,6 +11,12 @@
     min-height: 100vh;
     background-color: #ddd;
 }
+.hero{
+    background:#FAA916;
+    color: #f3f3f3;
+    text-align: center;
+    padding: 100px 0px;
+}
 .container{
     width: 80%;
     display: block;
