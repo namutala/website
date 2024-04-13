@@ -10,11 +10,38 @@
               </nav>
               <div class="text-end">
                 <a class="btn b-primary text-white" href="{% url 'register_biz'%}">Create a new business</a>
+              </div> 
+              
+              <div class="table-container bg-white p-3 rounded mt-3">
+                <table class="table" id="business_table">
+                  <thead>
+                    <th>#</th>
+                    <th>Business name</th>
+                    <th>Location</th>
+                    <th>Email</th> 
+                    <th>Contact</th>  
+                    <th>Action</th> 
+                  </thead>
+                  <tbody> 
+                    {%  for business in businesses %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ business.business_name }}</td>
+                      <td>{{ business.location }}</td>
+                      <td>{{ business.email }}</td>
+                      <td>{{ business.Contact }}</td> 
+                      <td><a href="{% url 'catalogue' pk=business.pk %}" class="btn btn-ouline-warning"><i class="fa-solid fa-circle-info me-2" style="color: #faa916;"></i>Details</a></td>
+                    </tr> 
+                      {% endfor %} 
+                  </tbody>
+                </table>
               </div>
-            {%  for business in businesses %}
-            <li><a href="{% url 'catalogue' pk=business.pk %}">{{ business.business_name }}</a></li>
-            {% endfor %} 
+            
         </div>
     </section>
+
+    <script>
+      let table = new DataTable('#business_table');
+    </script>
 {% endblock content %}
  
