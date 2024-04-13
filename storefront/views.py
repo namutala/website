@@ -106,5 +106,8 @@ def Item_list(request):
     }
     return render(request, 'storefront/Item_list.html', context)
 
+def about(request):
+    return render(request, 'storefront/about.html')
+
 
    
