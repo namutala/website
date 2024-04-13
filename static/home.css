@@ -265,3 +265,13 @@ a{
     clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
     z-index: -1;
 }
+.ads .discount.appliance::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #AED9E0;
+    right: 0;
+    clip-path: polygon(70% 0%, 100% 0%, 100% 100%, 70% 100%);
+    z-index: -1;
+}
