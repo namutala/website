@@ -248,11 +248,12 @@ a{
 }
 
 .form-group input, .form-group select, .form-group textarea{
-    width: 70%;
+    width: 100%;
+    padding-left: 10px;
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #00000052;
-    transition: .3s ease;
+    transition: .3s ease; 
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
@@ -261,6 +262,10 @@ a{
 }
 
 .form-group input, .form-group select{
+    outline: none;
+    height: 40px; 
+}
+ .form-group textarea{
     outline: none;
     height: 40px; 
 }
