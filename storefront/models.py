@@ -92,7 +92,7 @@ class Order(models.Model):
     order_status = models.CharField(max_length=20, choices= STATUS, default = 'Pending')
     created_at = models.DateTimeField(default= timezone.now)
     payment_method = models.CharField(choices= PAYMENT, default = 'Cash On Delivery', max_length= 30)
-    
+    confirmation_token = models.CharField(max_length=255, blank=True, null=True)
     def save(self, *args, **kwargs):
         # Ensure that the user is set before saving the order
         if not self.user:

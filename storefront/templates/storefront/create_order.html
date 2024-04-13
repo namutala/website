@@ -20,7 +20,9 @@
         <p>Localbizconnect and its users are in postion to monitor the progress of orders 
             <li>Order date: {{ form.created_at}}</li></p>
         <p> </p>
+        <a href = {% url 'Item-list' %}
         <button type="submit" class="btn btn-primary">Place Order</button>
+        </a>
     </form>
 </div>
 {% endblock %}

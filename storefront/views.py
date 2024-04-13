@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 from .forms import OrderForm
 from django.contrib import messages
 from services.models import service
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def home(request):
@@ -56,27 +59,55 @@ def Order_details(request):
     return render(request, 'storefront/Order_details.html', context)
 
 @login_required
-def create_order(request, total_price= None):
+def create_order(request, confirmation_token, total_price= None):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
             order.total_price = total_price  # Set the total price
+            confirmation_token = default_token_generator.make_token(order)
+            order.confirmation_token = confirmation_token
             order.save()
-            messages.success(request, "An email has been sent to verify the order")
             form.save()
+            send_confirmation_email(order)
+            messages.success(request, "An email has been sent to verify the order")
             return redirect('Item-list')
     else:
         form = OrderForm(initial={'total_price': total_price})
-    return render(request, 'storefront/create_order.html', {'form': form, 'total_price': total_price})
+    return render(request, 'storefront/create_order.html', {'form': form, 'total_price': total_price,  'confirmation_token': confirmation_token})
 
+def send_confirmation_email(order):
+    subject = 'Order Confirmation'
+    context = {
+        'order': order,
+        'confirmation_token': order.confirmation_token
+    }
+    message = render(None, 'confirmation_email.html', context)
+    send_mail(subject, message.content_subtype, settings.DEFAULT_FROM_EMAIL, [order.email], html_message=message.content)
 
+# views.py
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Order
+
+def confirm_order(request, confirmation_token):
+    order = get_object_or_404(Order, confirmation_token=confirmation_token)
+    
+    # Perform actions based on confirmation
+    # For example, mark the order as confirmed
+    order.confirmed = True
+    order.save()
+    
+    # Redirect to a confirmation page or display a success message
+    return render(request, 'storefront/confirmation_email.html')
 
 def Item_list(request):
     context = {
         'Item' :Item.objects.all()
     }
     return render(request, 'storefront/Item_list.html', context)
+
+def about(request):
+    return render(request, 'storefront/about.html')
 
 
    
