@@ -10,6 +10,9 @@
 .c-primary{
     color: #FAA916!important;
 }
+.b-secondary{
+    background: #AED9E0;
+}
 
 .hero{
     min-height: 125vh;
