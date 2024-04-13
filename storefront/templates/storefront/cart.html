@@ -64,9 +64,9 @@
             <div class="mt-4 text-center">
                 <div class="text-start d-flex justify-content-between">
                     <h6 class="text-muted">TOTAL COST:</h6>
-                    <h5>Ugx. {{ total_price }}</h5></h5>
+                    <h5>Ugx. {{ total_price }}</h5>
                 </div>
-                <a href="{% url 'create-order' total_price=total_price %}" class="btn btn-sm btn-primary w-100">
+                <a href="{% url 'create-order' total_price=total_price confirmation_token='your_confirmation_token_value' %}" class="btn btn-sm btn-primary w-100">
                     Checkout
                     <i class="fa-regular fa-hand-point-right ms-1"></i>
                 </a>
