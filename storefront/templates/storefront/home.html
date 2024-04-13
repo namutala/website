@@ -21,9 +21,9 @@
         <div class="offcanvas-body"> 
             <ul>
                 <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Priciing</a></li>
-                <li><a href="">Testimonies</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">My account</a></li>
+                <li><a href="">New Business</a></li>
                 <li><a href="">Contact</a></li>
 
             </ul>
@@ -42,13 +42,16 @@
                             <ul>
                                 <li><a href="{% url 'Item-list' %}">Home</a></li>
                                 <li><a href="{% url 'services' %}">Services</a></li>
-                                <li><a href="">Pricing</a></li>
-                                <li><a href="">Testimonies</a></li>
-                                <li><a href="">Contact</a></li>
+                                <li><a href="{% url 'profile' %}">My account</a></li>
+                                <li><a href="{% url 'register_biz' %}">New Business</a></li>
+                                <li><a href="#footer">Contact</a></li>
+                                <li><a href = "{% url 'profile' %}"> Profile</a><li>
                             </ul>
                         </div>
                         <div class="signin d-flex align-items-center">
+                            <a href = "{% url 'cart-view' %}">
                             <i class="fa-solid fa-cart-shopping me-2 text-white"></i>
+                            </a>
                             <a href="{% url 'login' %}">Login</a>
                         </div>
                     </div>
@@ -70,20 +73,21 @@
         </div>
     </section>
     <section>
+      
         <div class="container-fluid bg-light">
             <div class="p-3">
                 <div class="row">
                     <div class="col-12 col-md-3">
                         <div class="shadow py-2 text-white rounded b-primary service-list">
                             <ul>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
-                                <li>service 1</li>
+                                <p>Services<p>
+                                <a href = "{% url 'services' %}"
+                                {% for service_name in service_names %}
+                                <li>{{ service_name }}</li>
+                                {% endfor %}
+                                </a>
+                               
+                                
                             </ul>
                         </div>
                     </div>
@@ -116,7 +120,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="footer">
         <div class="b-primary footer p-3">
             <div class="container">
                 <div class="row">
@@ -128,16 +132,15 @@
                         <div class="widget footer_widget">
                             <h5 class="footer-title">Address</h5>
                             <div class="gem-contacts">
-                              <div class="gem-contacts-item gem-contacts-address">Corporate Office :<br> Doon House, B-275(A), First floor
-                                Sector-57, Shushant Lok 3
-                                Near Hong Kong Bazzar, Gurugram Pin 122001, Haryana.
+                              <div class="gem-contacts-item gem-contacts-address">Corporate Office :<br> Richie Tower, B-275(A), First floor
+                                Sector-57, Makerere
+                                Kikoni West, Zone 2, Off Nanfumbambi Road.
                               </div>
-                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">+91-9122588799</a></div>
+                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">+256-741594439</a></div>
             
-                              <div class="gem-contacts-item gem-contacts-address mt-2">Reg. Office :<br> Doon House, D2/3,
-                                4th Floor, Chandra Tower, IDBI Bank Building
-                                Dimna Road, Mango, Jamshedpur-831012, Jharkhand.</div>
-                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>+91 9122588799</a></div>
+                              <div class="gem-contacts-item gem-contacts-address mt-2">Reg. Office :<br> Wilsen House, D2/3,
+                                2th Floor, Wilsen Tower, Section 2</div>
+                              <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>+256-776890699</a></div>
             
                             </div>
                           </div>
@@ -149,28 +152,28 @@
                               <li class="clearfix gem-pp-posts">
                                 <div class="gem-pp-posts-text">
                                   <div class="gem-pp-posts-item">
-                                    <a href="#">Want to start Your Own Play School.
+                                    <a href="#">Want to start Your Own Online Business.
                                     </a>
                                   </div>
-                                  <div class="gem-pp-posts-date">Call +91-9122588799</div>
+                                  <div class="gem-pp-posts-date">Call +256-755835030</div>
                                 </div>
                               </li>
                               <li class="clearfix gem-pp-posts">
                                 <div class="gem-pp-posts-text">
                                   <div class="gem-pp-posts-item">
-                                    <a href="#">Now we are in Faridabad,Now we are in DaudNagar.
+                                    <a href="#">Now we are in Wakiso district,Now along Hoima Road.
                                     </a>
                                   </div>
-                                  <div class="gem-pp-posts-date">Call +91-9122588799, +91-9122588799</div>
+                                  <div class="gem-pp-posts-date">Call +256-774355365, +256-755835030</div>
                                 </div>
                               </li>
                               <li class="clearfix gem-pp-posts">
                                 <div class="gem-pp-posts-text">
                                   <div class="gem-pp-posts-item">
-                                    <a href="">Now we are in Ranchi, Admission open
+                                    <a href="">Now we are in Wakiso
                                     </a>
                                   </div>
-                                  <div class="gem-pp-posts-date">Call +91-9122588799, +91-9122588799</div>
+                                  <div class="gem-pp-posts-date">Call +256-755835030, +256-774355367</div>
                                 </div>
                               </li>
         

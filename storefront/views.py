@@ -5,10 +5,15 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .forms import OrderForm
 from django.contrib import messages
+from services.models import service
+
+
 def home(request):
+    service_names = service.objects.values_list('service_name', flat=True)
     context ={
-        'product' :Item.objects.all()
+        'product' :Item.objects.all(), 'service_names': service_names
               }
+    
     return render(request, "storefront/home.html", context)
 
 
@@ -72,3 +77,6 @@ def Item_list(request):
         'Item' :Item.objects.all()
     }
     return render(request, 'storefront/Item_list.html', context)
+
+
+   
