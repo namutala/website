@@ -11,6 +11,28 @@
     min-height: 100vh;
     background-color: #ddd;
 }
+.navbar ul{
+    list-style-type: none;
+    background-color: #FAA916;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+}
+.navbar a{
+    color: #f3f3f3;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+}
+.navbar a:hover{
+    cursor: pointer;
+}
+.navbar li{
+    float: right;
+}
 .hero{
     background:#FAA916;
     color: #f3f3f3;
