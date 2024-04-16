@@ -24,7 +24,7 @@ class TestStorefront(TestCase):
             item=self.item,
             key_features='test key_features'
         )
-        self.order_item = OrderItem.objects.create(item=self.item)
+        #self.order_item = OrderItem.objects.create(item=self.item)
 
         self.order = Order.objects.create(
             user=self.user,
