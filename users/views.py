@@ -9,9 +9,6 @@ def home(request):
     login_url = reverse('login')
     return HttpResponse(f'<h1>Hello there</h1><a href="{login_url}">Login</a>')
 
-def login(request):
-    return render(request, 'users/login.html')
-
 def register(request):
     if request.method =='POST':
         form = UserRegisterForm(request.POST)
@@ -25,7 +22,7 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 
-@login_required(login_url='/login') 
+@login_required(login_url='login') 
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
@@ -43,3 +40,4 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'users/profile.html', context)
+

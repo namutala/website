@@ -40,6 +40,13 @@ class ProfileTests(TestCase):
         self.assertEqual(query_from_db.user, self.profile.user)
         self.assertEqual(query_from_db.image, 'test.png')
         self.assertEqual(query_from_db.Bio, 'This is a test bio.')
+    def test_update_profile(self):
+        self.profile.save()
+        self.profile.Bio = "This is new bio"
+        self.profile.save()
+        query_from_db = Profile.objects.get(user=self.user)
+        self.assertEqual(query_from_db.Bio, 'This is new bio')
+
 
     def test_homepage_view(self):
         response = self.client.get(reverse('site-home'))

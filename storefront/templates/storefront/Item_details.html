@@ -8,7 +8,6 @@
     {% if item_details %}
       <h1>{{item_details.title }} details</h1>
       <img src ="{{ item_details.item.picture.url }}" alt ="{{item_details.item.title}}">
-      <p>Description :{{ item_details.description }}</p>
       <p>Key features:{{ item_details.key_features }}</p>
     {% else %}
       <p> No details found</p>

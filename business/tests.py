@@ -25,6 +25,11 @@ class BusinessTests(TestCase):
         self.assertEqual(self.business.owner, self.user)
         self.assertEqual(self.business.business_name, 'tester')
         self.assertEqual(self.business.logo, 'test_logo.png')
+    def test_business_updating(self):
+        self.business.save()
+        self.business.email = 'aiknew@yahoo.com'
+        self.business.save()
+        self.assertEqual(self.business.email, 'aiknew@yahoo.com')
 
     def test_homepage_view_authenticated(self):
         self.client.login(username='tester', password='secret')
@@ -43,3 +48,5 @@ class BusinessTests(TestCase):
         query_from_business = Business.objects.filter(owner=self.user).first()
         url = reverse('catalogue', kwargs={'pk': query_from_business.pk})
         self.assertEqual(url, '/business/'+str(count))
+        url = self.client.get(reverse('catalogue', kwargs={'pk': query_from_business.pk}))
+        self.assertEqual(url.status_code, 200)

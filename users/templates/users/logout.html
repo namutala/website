@@ -1,13 +1,17 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title></title>
   </head>
   <body>
-    <h1>You have been logged out... success</h1>
+    {% block content %}
+    <h1>You have been logged out</h1>
     <div class="border-top pt-3">
       <small class="text-muted">
-        <a href="{% url 'login' %}"> Log In again</a>
+       <button> <a href="{% url 'login' %}"> Log In again</a>
+       </button>
       </small>
     </div>
+    {% endblock content %}
   </body>
 </html>
