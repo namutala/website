@@ -26,13 +26,16 @@ class TestStorefront(TestCase):
         )
         self.order_item = OrderItem.objects.create(item=self.item)
 
-        # self.order = Order.objects.create(
-        #     user=self.user,
-        #     items=self.item_detail.item,
-        #     start_date=timezone.now(),
-        #     ordered_date=timezone.now(),
-        #     ordered=False
-        # )
+        self.order = Order.objects.create(
+            user=self.user,
+            item=self.item_detail.item,
+            total_price=1000,
+            location="Kampala",
+            order_status='Pending',
+            pay_method='Cash On Delivery',
+            confirmation_method='Test token',
+        )
+
 
     def test_item_creation(self):
         self.item.save()
