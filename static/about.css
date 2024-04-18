@@ -1,51 +1,100 @@
 /*@import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');*/
 
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family:  Arial, sans-serif;
 }
-.section{
+*body{
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+/*.section{
     width: 100%;
     min-height: 100vh;
     background-color: #ddd;
-}
-.navbar ul{
-    list-style-type: none;
+}*/
+nav{
+    
     background-color: #FAA916;
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;
-    width: 100%;
-    position: fixed;
+    color: #fff;
+    padding:20px 0px;
 }
-.navbar a{
+nav .navbar {
     color: #f3f3f3;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
+    max-width: 1200px;
+    justify-content: space-between;
+    padding: 0px 20px;
+    display: flex;
     text-align: center;
+    margin: 0px auto;
 }
-.navbar a:hover{
+nav h1{
+    font-size: 24px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav ul li{
+    margin-right: 0px;
+}
+nav ul li a{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: #073B4C 0.3s;
+}
+nav ul li a:hover{
     cursor: pointer;
 }
-.navbar li{
-    float: right;
+nav ul li a.active{
+    color: #073B4C;
 }
+
 .hero{
     background:#FAA916;
     color: #f3f3f3;
+    /*background-image: url(static/download.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
     text-align: center;
     padding: 100px 0px;
 }
-.container{
-    width: 80%;
-    display: block;
-    margin: auto;
-    padding-top: 100px;
+.hero h2{
+    font-size: 48px;
+    text-transform: uppercase;
 }
-.content-section{
+main{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ddd;
+    padding: 100px 0px;
+}
+main .container{
+    width: 100%;
+    display: block;
+    background-color: #ddd;
+    margin: auto;
+}*/
+main .container p{
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    float: left;
+}
+main .content p{
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    float: left;
+}
+main .social{
     float: left;
     width: 55%;
 }
@@ -57,103 +106,45 @@
     width: 100%;
     height: auto;
 }
-.content-section .title{
-    text-transform: uppercase;
-    font-size: 28px;
-}
-.content-section .content h3{
-    margin-top: 20px;
-    color: #5d5d5d;
-    font-size: 25px;
-}
-.content-section .content p{
-    margin-top: 10px;
-    font-family: sans-serif;
-    font-size: 17px;
-    line-height: 1.5;
-}
-.content-section .button{
-    margin-top: 30px;
-}
-.content-section .button a{
-    background-color: #FAA916;
-    padding: 12px 40px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 25px;
-    letter-spacing: 1.5px;
-}
-.content-section .button a:hover{
+.container .button a{
     background-color: #3d3d3d;
-    color: #fff;
+    padding: 12px 40px;
 }
-.content-section .social{
-    margin: 40px 40px;
+main h2{
+    margin-bottom: 20px;
+    
 }
-.content-section .social a{
-    text-decoration: none;
-    color: #222;
-    font-size: 25px;
-    padding: 0px 7px;
-}
-.content-section .social a:hover{
-    color:#FAA916;
-    transition: 1s ease;
-}
-.content-section .social i{
-    color: #FAA916;
-    font-size: 30px;
-    padding: 0px 10px;
-    border: 2px solid #FAA916;
-    border-radius: 100%;
+footer .container{
+    background-color: #FAA916;
     text-align: center;
-    line-height: 125%;
+    margin: 0px auto;
+    max-width: 1200px;
+    padding: 0px;
 }
-.content-section .social i:hover{
-    color: #3d3d3d;
+footer p{
+color: #222;
+/*padding: 0px 20px;*/
+text-align: center;
 }
 @media screen and (max-width: 768px){
-    .container{
+    nav .container{
         width: 80%;
         display: block;
         margin: auto;
         padding-top: 100px;
+        flex-direction: column;
     }
-    .content-section{
-        float: none;
-        width: 100%;
-        display: block;
-        margin: auto;
+    nav ul{
+        margin-top: 20px;
     }
-    .image-section{
-        float: none;
-        width: 100%;
-        display: block;
-        margin: auto;
+    nav ul li{
+        margin-top: 0px;
+        margin-bottom: 10px;
     }
-    .content-section .title{
-        text-align: center;
-        font-size: 19px;
+    .hero h2{
+        font-size: 36px;
     }
-    .content-section .button{
-        text-align: center;
-    }
-    .content-section .button a{
-        padding: 9px 30px;
-    }
-    .content-section .social {
-        text-align: center;
-    }
-    .image-section{
-        float: none;
-        width: 100%;
-    }
-    .image-section img{
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: auto;
-    }
+    
 
     
 }
