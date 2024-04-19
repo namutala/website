@@ -4,12 +4,13 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family:  Arial, sans-serif;
 }
-*body{
+body{
     font-size: 16px;
+    margin: 0px;
     width: 100%;
     height: 100%;
+    background-color: #ddd;
 }
 /*.section{
     width: 100%;
@@ -33,34 +34,35 @@ nav .navbar {
 }
 nav h1{
     font-size: 24px;
+    color: #222;
 }
-nav ul{
-    list-style: none;
-    display: flex;
+.navbar ul{
+    list-style-type: none;
+    display: block;
+    background-color: #FAA916;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
 }
-nav ul li{
-    margin-right: 0px;
-}
-nav ul li a{
+.navbar a{
     color: #fff;
-    font-weight: bold;
+    padding: 15px;
+    display: block;
+    text-align: center;
     text-decoration: none;
-    transition: #073B4C 0.3s;
 }
-nav ul li a:hover{
+.navbar a:hover{
+    color: #073B4C;
     cursor: pointer;
 }
-nav ul li a.active{
-    color: #073B4C;
+.navbar li{
+    float: left;
 }
 
-.hero{
+
+header .hero{
     background:#FAA916;
-    color: #f3f3f3;
-    /*background-image: url(static/download.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;*/
+    color: #fff;
     text-align: center;
     padding: 100px 0px;
 }
@@ -71,15 +73,16 @@ nav ul li a.active{
 main{
     width: 100%;
     min-height: 100vh;
-    background-color: #ddd;
+    background-color: #FFA916;
     padding: 100px 0px;
 }
 main .container{
     width: 100%;
     display: block;
-    background-color: #ddd;
+    background-color: #FFA916;
     margin: auto;
-}*/
+    float: left;
+}
 main .container p{
     margin-top: 10px;
     font-family: sans-serif;
@@ -94,9 +97,19 @@ main .content p{
     line-height: 1.5;
     float: left;
 }
-main .social{
+main .container .social{
     float: left;
     width: 55%;
+    margin: 40px 40px;
+}
+.container .social i{
+    color: #FAA916;
+    font-size: 30px;
+    padding: 0px 10px;
+}
+.container .social i:hover{
+    color: #073B4C;
+    cursor: pointer;
 }
 .image-section{
     float: right;
@@ -106,9 +119,20 @@ main .social{
     width: 100%;
     height: auto;
 }
+main .container .button{
+    margin-top: 30px;
+}
 .container .button a{
     background-color: #3d3d3d;
     padding: 12px 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+}
+.container .button a:hover{
+    background-color: #073B4C;
+    cursor: pointer;
 }
 main h2{
     margin-bottom: 20px;
@@ -121,10 +145,11 @@ footer .container{
     max-width: 1200px;
     padding: 0px;
 }
-footer p{
-color: #222;
+footer {
+    color: #222;
 /*padding: 0px 20px;*/
-text-align: center;
+    text-align: center;
+    width: 100%;
 }
 @media screen and (max-width: 768px){
     nav .container{
