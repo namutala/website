@@ -1,2 +1,37 @@
-/*@import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');*/
-
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav {
+    width: 100%;
+    overflow: hidden;
+    background-color: #FFA916;
+}
+.navbar ul{
+    list-style-type: none;
+    padding: 30px;
+    margin: 0px;
+    font-size: 17px;
+}
+.navbar li{
+    float: right;
+}
+.navbar a{
+    padding: 25px;
+    color: #fff;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: black;
+    cursor: pointer;
+}
+.hero-image{
+    background-image: url(/static/download.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 70%;
+    
+}
