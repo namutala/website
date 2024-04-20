@@ -35,3 +35,41 @@ nav {
     height: 70%;
     
 }
+.hero-text h1{
+    font-size: 50px;
+    color: rgba(0, 9, 10, 0.9);
+    text-align: center;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+.row .column{
+    float: left;
+    padding: 0px 8px;
+    width: 33.3%;
+    margin: 0px auto;
+}
+.card{
+    margin: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container{
+    padding: 0 16px;
+}
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+footer{
+    background-color: #FFA916;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+  
