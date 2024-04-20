@@ -10,7 +10,7 @@ class TestStorefront(TestCase):
             email='aik@yahoo.fr',
             password='secret'
         )
-        self.client.login(username='tester', password='secret')
+        self.client.force_login(self.user)
 
         self.item = Item.objects.create(
             title='test item',
@@ -26,17 +26,20 @@ class TestStorefront(TestCase):
         )
         #self.order_item = OrderItem.objects.create(item=self.item)
 
+
+    def test_order_model(self):
         self.order = Order.objects.create(
             user=self.user,
             item=self.item_detail.item,
             total_price=1000,
             location="Kampala",
             order_status='Pending',
-            pay_method='Cash On Delivery',
-            confirmation_method='Test token',
+            payment_method='Cash On Delivery',
+            confirmation_token='Test token',
         )
-
-
+        self.order.save()
+        latest_order = Order.objects.latest('id')
+        self.assertEqual(latest_order.location, "Kampala")
     def test_item_creation(self):
         self.item.save()
         latest_item = Item.objects.latest('id')
