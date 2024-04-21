@@ -52,7 +52,15 @@
                             <a href = "{% url 'cart-view' %}">
                             <i class="fa-solid fa-cart-shopping me-2 text-white"></i>
                             </a>
-                            <a href="{% url 'login' %}">Login</a>
+                            {% if user.is_authenticated %}
+                              <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button class="btn border rounded-pill text-white px-4 ms-2" type="submit">Logout</button>
+                            </form>
+                            {% else %}
+                             <a class="ms-2" href="{% url 'login' %}">Login</a>
+                            {% endif %}
+                            
                         </div>
                     </div>
                 </div>
