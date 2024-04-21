@@ -29,6 +29,12 @@
             </ul>
         </div>
       </div>
+      {% if messages %}
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      {% endif %}
+
     <section>
         <div class="container-fluid service-page p-0">
             <div class="hero">
@@ -78,13 +84,22 @@
                     <div id="carouselExampleAutoplaying" class="carousel slide bg-primary" data-bs-ride="carousel">
                       <div class="carousel-inner">
                         <div class="carousel-item active">
-                           <img src="{{ service_provided.image1.url }}" alt="" srcset="">
+                           <img src="{{ service_provided.image1.url }}" alt="service image mot found">
                         </div>
                         <div class="carousel-item">
-                          <img src="{{ service_provided.image2.url }}" alt="">
+                          <img src="{{ service_provided.image2.url }}" alt="service image not found ">
                         </div>
                         <div class="carousel-item">
-                          <img src="{{ service_provided.image3.url }}" alt="">
+                          <img src="{{ service_provided.image3.url }}" alt="service_image not found">
+                        </div>
+                        <div class="carousel-item">
+                          <img src = "{{ service_provided.image4.url }}" alt ="service image not found">
+                        </div>
+                        <div class="carousel-item">
+                        <img src = "{{ service_provided.image5.url }}" alt = "service image not found ">
+                        </div>
+                        <div class="carousel-item">
+                        <img src = "{{ service_provided.image6.url }}" alt = "service image nnot found">
                         </div>
                       </div>
                       <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -103,9 +118,10 @@
 
                       <p><span class="fw-bold">Location</span> : {{ service_provided.location }} </p>
                       <p><span class="fw-bold">Contact</span> : {{ service_provided.Contact }} </p>
-                      <br/>ID: {{ service_provided.id }}
                     </div>
-                    <button  type = 'button' value = "{{ service_provided.id }}" class = "btn btn-secondary" id = 'book-now'>Book Now </button>
+                    <a href ={% url 'service-booking' %}>
+                    <button class = "btn btn-secondary" type ="submit" >Book Now </button>
+                    </a>
                   </div>
                   
                   {% endfor %}
