@@ -5,9 +5,10 @@
     font-family: sans-serif;
 }
 
-body{
-    height: 100vh;
-    overflow: hidden;
+.b-primary{
+    background-color: #FAA916!important;
+}
+body{  
     background: #ebe8e8;
 }
 
@@ -88,10 +89,9 @@ i{
 }
 .sidebar{
     position: relative;
-    height: 100vh; 
+    height: 100%; 
     width: 200px;
-    background: #fff;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, .3);
+    background: #fff; 
     transition: .3s ease;
 }
 .sidebar ul {
@@ -145,6 +145,26 @@ i{
 /* .content */
 .content{
     width: 100%;
+    height: auto;
     background: #ebe8e8;
     border-radius: 20px;
+    overflow: scroll;
+} 
+
+.content::-webkit-scrollbar {
+    width: 5px;  
+}
+
+.content::-webkit-scrollbar-track {
+    background-color: #eee;  
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #FAA916;  
+    border-radius: 10px;
+     
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background-color: #FFC107;  
 }
