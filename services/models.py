@@ -15,8 +15,9 @@ class service(models.Model):
     image6 = models.ImageField(upload_to='service_images', blank=True)
     location = models.CharField(max_length = 100, default = 'Kampala')
     Contact = models.IntegerField(default =+256)
+    
     def __str__(self):
-        return self.service_name
+        return f'{self.service_name}  {self.service_description}'
 
 STATUS_CHOICE = (
     ('Pending','Pending'),
@@ -25,12 +26,12 @@ STATUS_CHOICE = (
 )
 class booking(models.Model):
     customer = models.ForeignKey(User, on_delete = models.CASCADE)
-    service_booked = models.ForeignKey(service, on_delete = models.CASCADE)
+    service_booked = models.OneToOneField(service, on_delete = models.CASCADE)
     date_booked = models.DateTimeField(default =timezone.now)
     start_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices= STATUS_CHOICE, max_length=18, default = 'Pending')
     
       
-    def __str__(self):
-        return f'Booking of {self.service_booked} by {self.customer}'
+def __str__(self):
+        return f'Booking of {self.service_booked.service_name} - {self.service_booked.service_description} by {self.customer}'
     

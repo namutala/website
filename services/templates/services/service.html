@@ -119,7 +119,7 @@
                       <p><span class="fw-bold">Location</span> : {{ service_provided.location }} </p>
                       <p><span class="fw-bold">Contact</span> : {{ service_provided.Contact }} </p>
                     </div>
-                    <a href ={% url 'service-booking' %}>
+                    <a href ="{% url 'service-booking' service_provided.id %}">
                     <button class = "btn btn-secondary" type ="submit" >Book Now </button>
                     </a>
                   </div>
