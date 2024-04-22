@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.urls import reverse
+from django.contrib.auth import logout
 def home(request):
     login_url = reverse('login')
     return HttpResponse(f'<h1>Hello there</h1><a href="{login_url}">Login</a>')
@@ -41,3 +42,7 @@ def profile(request):
     }
     return render(request, 'users/profile.html', context)
 
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('Item-list')

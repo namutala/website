@@ -27,18 +27,23 @@ nav {
     cursor: pointer;
 }
 .hero-image{
-    background-image: url(/static/download.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/login.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 70%;
+    height: 85vh;
     
 }
 .hero-text h1{
-    font-size: 50px;
-    color: rgba(0, 9, 10, 0.9);
+    font-size: 80px;
+    color: white;
     text-align: center;
+    text-transform: capitalize;
+}
+.hero-text p{
+    font-size: 70px;
+    color: #FFA916;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -98,6 +103,13 @@ footer{
     background-color: #fffc00;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+@media screen and (max-width: 650px){
+    .row .column{
+        width: 100%;
+        padding: 0 4px;
+        display: block;
+    }
 }
 
   
