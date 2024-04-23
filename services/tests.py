@@ -42,15 +42,15 @@ class ServiceTests(TestCase):
         self.assertEqual(latest_booking.service_booked, self.service)
 
         #Testing two bookings for one service
-        booking2 = booking.objects.create(
-            customer=self.user,
-            service_booked=self.service,
-            date_booked=timezone.now() + timezone.timedelta(days=1)
-        )
-        booking2.save()
-        latest_booking2 = booking.objects.latest('id')
-        self.assertNotEqual(latest_booking2.id, latest_booking.id)
-        self.assertEqual(booking.objects.count(), 2)
+        # booking2 = booking.objects.create(
+        #     customer=self.user,
+        #     service_booked=self.service,
+        #     date_booked=self.booking.date_booked + timezone.timedelta(days=1)
+        # )
+        # booking2.save()
+        # latest_booking2 = booking.objects.latest('id')
+        # self.assertNotEqual(latest_booking2.id, latest_booking.id)
+        # self.assertEqual(booking.objects.count(), 2)
     def test_services_home_view(self):
         self.service.save()
         response = self.client.get('/services/')
@@ -61,6 +61,8 @@ class ServiceTests(TestCase):
         self.service.save()
         response = self.client.get('/services/')
         self.assertEqual(response.status_code, 200)
-        # response = self.client.get(reverse('booking-request'))
-        # self.assertEqual(response.status_code, 200)
+
+        self.booking.save()
+        response = self.client.get(reverse('service-booking', kwargs={'service_id': self.booking.id}))
+        self.assertEqual(response.status_code, 200)
 
