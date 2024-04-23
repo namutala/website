@@ -86,6 +86,7 @@ i{
 /* sidebar stylings */
 .container-body{
     display: flex;
+    min-height: 100vh;
 }
 .sidebar{
     position: relative;
@@ -145,7 +146,7 @@ i{
 /* .content */
 .content{
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     background: #ebe8e8;
     border-radius: 20px;
     overflow: scroll;
