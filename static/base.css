@@ -169,3 +169,10 @@ i{
 .content::-webkit-scrollbar-thumb:hover {
     background-color: #FFC107;  
 }
+
+
+/* profile page */
+
+.profile form a, .profile form .helptext{
+    display: none!important;
+}
