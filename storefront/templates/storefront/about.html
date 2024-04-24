@@ -27,7 +27,6 @@
         <div class="hero-text">
             <h1>LocalBizConnect</h1>
             <p>Hi! Welocome, Here is what to know about LocalBizConnect</p>
-            <button><menu type="toolbar">Our Team</menu></button>
         </div>
     </div>
     <section>
@@ -46,7 +45,8 @@
                     <img src="/static/images/team copy.webp" alt="#">
                     <div class="container">
                         <h2>Our Team</h2>
-                        <p> At LocalBizConnect our team is comprised of passionate individuals from diverse backgrounds, united by a common goal: to support and uplift local businesses and communities. Each member brings a unique set of skills, experiences, and perspectives to the table, contributing to the strength and dynamism of our organization.</p>
+                        <p> At LocalBizConnect our team is comprised of passionate individuals from diverse backgrounds, <span id="dots">...</span>  <span id="more"> united by a common goal: to support and uplift local businesses and communities. Each member brings a unique set of skills, experiences, and perspectives to the table, contributing to the strength and dynamism of our organization.</span></p>
+                        <button onclick="myFunction()" id="myBtn">Read More</button>
                     </div>
                 </div>
             </div>
@@ -71,5 +71,23 @@
             <p>&copy; 2024 LocalBizConnect. All rights reserved</p>
         </div>
     </footer>
+    <script>
+        function myFunction() {
+          var dots = document.getElementById("dots");
+          var moreText = document.getElementById("more");
+          var btnText = document.getElementById("myBtn");
+        
+          if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more"; 
+            moreText.style.display = "none";
+          } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less"; 
+            moreText.style.display = "inline";
+          }
+        }
+        </script>
+    
 </body>
 </html>
