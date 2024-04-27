@@ -30,5 +30,3 @@ def book_service(request, service_id):
 
 
 
-
-
