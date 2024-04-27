@@ -18,7 +18,9 @@
       </div>
          <form method="POST" enctype="multipart/form-data" class="w-75 mx-auto">
           {% csrf_token %}
-          <div class="form-group mt-4">
+
+          {{ form }}
+          <!-- <div class="form-group mt-4">
             <label>Owner</label>
                 {{ form.owner }}
           </div>
@@ -41,7 +43,7 @@
           <div class="form-group mt-4">
             <label>Description:</label>
             {{ form.business_description }}
-          </div>
+          </div> -->
            
           <div class="container p-0 my-3 text-center">
             <input type="file" name="photos" class="form-control" />

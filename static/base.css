@@ -86,6 +86,7 @@ i{
 /* sidebar stylings */
 .container-body{
     display: flex;
+    min-height: 100vh;
 }
 .sidebar{
     position: relative;
@@ -145,7 +146,7 @@ i{
 /* .content */
 .content{
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     background: #ebe8e8;
     border-radius: 20px;
     overflow: scroll;
@@ -167,4 +168,16 @@ i{
 
 .content::-webkit-scrollbar-thumb:hover {
     background-color: #FFC107;  
+}
+
+
+/* profile page */
+
+.profile form a, .profile form .helptext{
+    display: none!important;
+}
+
+textarea{
+    width: 100%;
+    height: 40px;
 }
