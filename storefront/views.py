@@ -69,8 +69,8 @@ def create_order(request, confirmation_token, total_price= None):
             order.confirmation_token = confirmation_token
             order.save()
             form.save()
+            messages.success(request, f'An email has been sent to verify the order')
             send_confirmation_email(order)
-            messages.success(request, "An email has been sent to verify the order")
             return redirect('Item-list')
     else:
         form = OrderForm(initial={'total_price': total_price})

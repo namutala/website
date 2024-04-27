@@ -64,6 +64,13 @@
                         </div>
                     </div>
                 </div>
+                {% if messages %}
+                {% for message in messages %}
+                <div class="custom-message {{ message.tags }}">
+                {{ message }}
+                </div>
+                {% endfor %}
+                {% endif%}
                 <div class="content d-flex align-items-center pe-4">
                     <div class="ms-auto ps-2">
                         <h1>Connect your bussiness</h1>
