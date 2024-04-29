@@ -38,6 +38,7 @@ urlpatterns = [
     path('', include('storefront.urls')),
     path('services/', include('services.urls')),
     path('service_cart/', include('service_cart.urls')),
+    path('reviews/', include('reviews.urls')),
 ]
 
 if settings.DEBUG :
