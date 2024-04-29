@@ -31,7 +31,7 @@ nav {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative;/* Set position relative for absolute positioning of hero text */
     height: 85vh;
     
 }
@@ -62,9 +62,10 @@ nav {
 .container{
     padding: 0 16px;
 }
+/* Clearfix for row and column elements */
 .container::after, .row::after {
-    content: "";
-    clear: both;
+    content: ""; /* clear content*/
+    clear: both; /* clear floats*/
     display: table;
 }
 footer{
