@@ -10,7 +10,7 @@ class ServiceCartTest(TestCase):
             email='aik@yahoo.com',
             password='secret'
         )
-        self.client.force_login(username='tester', password='tester')
+        self.client.force_login(self.user)
 
     def test_service_cart(self):
         response = self.client.get('/service_cart/')
