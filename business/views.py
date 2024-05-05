@@ -7,12 +7,14 @@ from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView, ListView
+# from users.urls import
 
 
 class BusinessCreateView(LoginRequiredMixin, CreateView):
     model = Business
     template_name = 'business/business_create.html'
     fields = '__all__'
+    login_url = 'login'
 
     def get_success_url(self):
         return reverse('catalogue', kwargs={'pk': self.object.pk})
