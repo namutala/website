@@ -3,7 +3,7 @@ from .models import Customer, Order, Item, Item_details
 from django.template.loader import get_template
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .forms import OrderForm
+from .forms import OrderForm, ItemForm
 from django.contrib import messages
 from services.models import service
 from django.contrib.auth.tokens import default_token_generator
@@ -19,7 +19,21 @@ def home(request):
     
     return render(request, "storefront/home.html", context)
 
+def ItemAdd(request):
+    if request.method == "POST":
+        form = ItemForm(request.POST)
+        if form.is_valid:
+            form.save()
+            item = form.cleaned_data.get('title')
+            messages.success(f'Your prouct, {{ item }} has been added successfuly ')
+            return redirect('Item-list')
+    else:
+        form = ItemForm()
+    return render(request, "storefront/add-item.html", {'form': form})
 
+    
+    
+    
 def product_details(request):
     context ={
         'item_details': Item_details.objects.all()
