@@ -136,6 +136,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static", #checks base dir then
     "assets/",
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
