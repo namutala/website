@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url();
+}
+nav{
+    background-color: #FFAA19;
+    overflow: hidden;
+    font-size: 17px;
+}
+
+.nav-bar{
+    text-align: center;
+}
+.nav-bar a{
+    color: #fff;
+    float: right;
+    text-decoration: none;
+
+}
