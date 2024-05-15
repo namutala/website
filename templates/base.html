@@ -16,10 +16,12 @@
         <section>
             <div class="top-navbar">
                 <div class="logo">
-                    <h3>
-                        <i class="fa-solid fa-bars fs-5" onclick="toggleSidebar()"></i>
-                        LocalBizConnect</h3>
-                    </div>
+                    <a href="{% url 'Item-list' %}" class="text-dark">
+                        <h3>
+                            <i class="fa-solid fa-bars fs-5" onclick="toggleSidebar()"></i>
+                            LocalBizConnect</h3>
+                    </a>    
+                </div>
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" name="" id="" placeholder="Search for Products">
