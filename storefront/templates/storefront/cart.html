@@ -2,9 +2,9 @@
 
 {% block content%}
 
-<div class="container bg-white rounded shadow mt-5">
+<div class="container bg-white rounded shadow mt-5 px-2  ">
     <div class="row">
-        <div class="col-8 p-4">
+        <div class="col-12 col-md-8 p-4 mt-3">
             <div class="border-bottom d-flex justify-content-between">
                 <h3>Shopping Cart</h3>
                 <h3>Cart({{ total_items }})</h3>
@@ -27,9 +27,7 @@
                                     <a href="{% url 'remove-item' item.id %}" class="mt-3 text-muted">Remove</a>
                                 </div>
                             </div>
-                        </div>
-
-
+                        </div> 
                         <div class="col-2">
                             <i class="fa-solid fa-minus"></i>
                             <input type="text" class="w-50 text-center" value="{{ quantity }}">
@@ -41,35 +39,37 @@
             {% endfor %}
 
                 <div class="bg-light mt-auto">
-                    <a href="{% url 'Item-list' %}">
+                    <a href="{% url 'Item-list' %}" class="btn btn-outline-warning my-4">
                         <i class="fa-solid fa-arrow-left"></i> Back to shopping
                     </a>
                 </div>
             </div>
         </div>
-        <div class="col-4 b-primary p-4">
-            <div class="border-bottom text-center text-white">
-                <h4>Order Summary</h4>
-            </div>
-            <div class="d-flex justify-content-between mt-4">
-                <h5>Total items : {{ total_items }}</h5>
-                <h5>Ugx. {{ total_price }}</h5></h5>
-            </div>
-            <div class="border-bottom pb-2">
-                <p>shopping</p>
-                <input type="text" class="form-control outline-none shadow-none">
-                <p>Discount Code</p>
-                <input type="text" class="form-control outline-none shadow-none">
-            </div>
-            <div class="mt-4 text-center">
-                <div class="text-start d-flex justify-content-between">
-                    <h6 class="text-muted">TOTAL COST:</h6>
-                    <h5>Ugx. {{ total_price }}</h5>
+        <div class="col-12 col-md-4 "> 
+            <div class="b-primary p-3">
+                <div class="border-bottom text-center text-white">
+                    <h4>Order Summary</h4>
                 </div>
-                <a href="{% url 'create-order' total_price=total_price confirmation_token='your_confirmation_token_value' %}" class="btn btn-sm btn-primary w-100">
-                    Checkout
-                    <i class="fa-regular fa-hand-point-right ms-1"></i>
-                </a>
+                <div class="d-flex justify-content-between mt-4">
+                    <h5>Total items : {{ total_items }}</h5>
+                    <h5>Ugx. {{ total_price }}</h5></h5>
+                </div>
+                <div class="border-bottom pb-2">
+                    <p>shopping</p>
+                    <input type="text" class="form-control outline-none shadow-none">
+                    <p>Discount Code</p>
+                    <input type="text" class="form-control outline-none shadow-none">
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="text-start d-flex justify-content-between">
+                        <h6 class="text-muted">TOTAL COST:</h6>
+                        <h5>Ugx. {{ total_price }}</h5>
+                    </div>
+                    <a href="{% url 'create-order' total_price=total_price confirmation_token='your_confirmation_token_value' %}" class="btn btn-sm btn-primary w-100">
+                        Checkout
+                        <i class="fa-regular fa-hand-point-right ms-1"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
