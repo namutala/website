@@ -308,7 +308,9 @@ a{
 .slide-all .test-slide .move .prod{       
     min-height: 350px; 
     min-width: 25%; 
+    flex: 1 0 200px;
     margin-left: 10px;
+    
 }  
  
 

@@ -17,10 +17,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .side-content, .login{
     height: 80vh;
     width: 80vh;
+    flex: 1 0 400px;
     display: grid;
     place-items: center;
     box-sizing: border-box;
