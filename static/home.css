@@ -305,6 +305,11 @@ a{
     overflow-x: scroll;
     
 }
+
+.slide-all .test-slide .move::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
 .slide-all .test-slide .move .prod{       
     min-height: 350px; 
     min-width: 25%; 
