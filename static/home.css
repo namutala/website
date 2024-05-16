@@ -39,7 +39,7 @@
     width: 100%; 
     content: '';
     position: absolute;
-    clip-path: circle(1350px at 8 5% -85%); 
+    clip-path: circle(1350px at 85% -85%); 
     /* clip-path: ellipse(100% 60% at 80% 30%);
     transform: rotateY(30deg); */
 }
