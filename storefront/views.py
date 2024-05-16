@@ -30,15 +30,30 @@ def ItemAdd(request):
     else:
         form = ItemForm()
     return render(request, "storefront/add-item.html", {'form': form})
-
-    
-    
+  
     
 def product_details(request):
     context ={
         'item_details': Item_details.objects.all()
     }
     return render(request, 'storefront/Item_details.html', context)
+
+
+def item_detail(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    
+    try:
+        item_details = Item_details.objects.get(item_ptr_id=item_id)
+    except Item_details.DoesNotExist:
+        item_details = None
+
+    return render(request, 'storefront/Item_details.html', {'item': item, 'item_details': item_details})
+
+
+
+
+
+
 
 def add_to_cart(request, item_id):
     item = get_object_or_404(Item, id=item_id)

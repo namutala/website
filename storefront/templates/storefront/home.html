@@ -107,7 +107,9 @@
                                     <div class="product-card shadow">
                                         <div class="row">
                                             <div class="col-12 product-image-holder">
-                                                <img src="{{ item.picture.url }}" class="product-image" alt="{{ item.title }}">
+                                                <a href ="{% url 'item_detail' item_id=item.id %}">
+                                                  <img src="{{ item.picture.url }}" class="product-image" alt="{{ item.title }}">
+                                                </a>
                                             </div>
                                             <div class="col-12">
                                                 <span class="c-primary">{{item.category }}</span>

@@ -66,7 +66,7 @@ class Item(models.Model):
     def __str__(self):
         return self.title
     
-class Item_details(models.Model):
+class Item_details(Item):
     item = models.OneToOneField(Item, on_delete = models.CASCADE, related_name ='details')
     key_features = models.TextField(max_length= 200) 
 
