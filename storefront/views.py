@@ -25,7 +25,7 @@ def ItemAdd(request):
         if form.is_valid:
             form.save()
             item = form.cleaned_data.get('title')
-            messages.success(f'Your prouct, {{ item }} has been added successfuly ')
+            messages.success(request, f'Your product, {{ item }} has been added successfuly ')
             return redirect('Item-list')
     else:
         form = ItemForm()
